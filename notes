@@ -1,7 +1,12 @@
+next:
 need to get the token supply of BAS, BAC
 need to get the token prices of BAS, BAC from uniswap
+
+todo:
+  - list out all the stats that we need
   - draw out generally what it will look like
   - add in storybook
+  - add vercel
 
 later:
 - create header and footer
