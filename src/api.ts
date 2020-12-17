@@ -29,11 +29,16 @@ export const apiGetTokenPriceFromUniswap = async (
   }
 };
 
-export const apiGetTotalSupply = async (token: TokenConfig): Promise<string> => {
+export const apiGetTotalSupply = async (
+  token: TokenConfig,
+): Promise<string | undefined> => {
   const provider = new ethers.providers.InfuraProvider(ChainId.MAINNET, infuraConfig);
   const contract = new Contract(token.contractAddress, ERC20_ABI, provider);
 
-  const supply = await contract.totalSupply();
-
-  return Number(formatUnits(supply, token.decimals)).toFixed(0);
+  try {
+    const supply = await contract.totalSupply();
+    return Number(formatUnits(supply, token.decimals)).toFixed(0);
+  } catch (err) {
+    console.error(`Failed to fetch supply of token ${token.symbol}`);
+  }
 };
