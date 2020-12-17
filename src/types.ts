@@ -1,6 +1,7 @@
 enum TokenNames {
   dai = 'dai',
   bac = 'bac',
+  bas = 'bas',
 }
 
 export type Tokens = {

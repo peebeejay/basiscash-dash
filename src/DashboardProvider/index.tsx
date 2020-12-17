@@ -1,5 +1,5 @@
 import React, { FC, useState, createContext, useMemo, useEffect } from 'react';
-import { apiGetTokenPriceFromUniswap } from '../api';
+import { apiGetTokenPriceFromUniswap, apiGetTotalSupply } from '../api';
 import { State, createInitialState, Dispatcher } from './state';
 import { tokens } from '../constants';
 
@@ -18,12 +18,24 @@ const DashboardProvider: FC<Props> = (props) => {
   }, []);
 
   const fetchData = async () => {
-    const bacPrice = await apiGetTokenPriceFromUniswap(tokens.bac);
+    const [bacPrice, basPrice, bacSupply, basSupply] = await Promise.all([
+      apiGetTokenPriceFromUniswap(tokens.bac),
+      apiGetTokenPriceFromUniswap(tokens.bas),
+      apiGetTotalSupply(tokens.bac),
+      apiGetTotalSupply(tokens.bas),
+    ]);
+
     updateState({
       ...state,
       prices: {
         ...state.prices,
         bac: bacPrice ?? null,
+        bas: basPrice ?? null,
+      },
+      tokenSupply: {
+        ...state.tokenSupply,
+        bac: bacSupply ?? null,
+        bas: basSupply ?? null,
       },
     });
   };

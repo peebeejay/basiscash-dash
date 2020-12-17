@@ -7,7 +7,13 @@ export const Dashboard = () => {
 
   return (
     <div>
-      {`Here is the BAC price: ${state.prices.bac}`}
+      {`BAC price: ${state.prices.bac}\n\n`}
+      <br />
+      {`BAS price: ${state.prices.bas}`}
+      <br />
+      {`BAC supply: ${state.tokenSupply.bac}`}
+      <br />
+      {`BAS supply: ${state.tokenSupply.bas}`}
       <Banner />
     </div>
   );
