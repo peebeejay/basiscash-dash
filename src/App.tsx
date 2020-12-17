@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Dashboard } from './Dashboard';
+import DashboardProvider from './DashboardProvider';
 
-function App() {
+export const App = () => {
+  const [hasWeb3, setHasWeb3] = useState(false);
+  const [user, setUser] = useState(''); // the current connected user
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function updateUserInfo() {
+      if (!isCancelled) {
+        setHasWeb3(typeof (window as any).ethereum !== 'undefined');
+      }
+    }
+
+    updateUserInfo();
+    const id = setInterval(updateUserInfo, 15000);
+    return () => {
+      isCancelled = true;
+      clearInterval(id);
+    };
+  }, [user]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={{}}>
+      <DashboardProvider>{hasWeb3 && <Dashboard />}</DashboardProvider>
+    </ThemeProvider>
   );
-}
-
-export default App;
+};
