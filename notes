@@ -1,13 +1,20 @@
-next:
-need to get the token supply of BAS, BAC
-need to get the token prices of BAS, BAC from uniswap
-
 todo:
+  - add in storybook
   - list out all the stats that we need
   - draw out generally what it will look like
-  - add in storybook
+  - create header and footer
+  - create card, value, and card header component
   - add vercel
+  - maybe move the infura provider initiation to on mount hook in react provider
 
 later:
-- create header and footer
-- create card, value, and card header component
+- look into abi type generation
+- add interval to fetch data periodically, maybe every 15s
+- add svg favicon
+- fix page description
+- set page title and description via react-helmet
+
+
+reach:
+- cache data on a backend service
+- frontend tracking and analytics
