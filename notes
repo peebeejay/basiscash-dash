@@ -1,9 +1,9 @@
 todo:
+  - add vercel
   - list out all the stats that we need
   - draw out generally what it will look like
   - create header and footer
   - create card, value, and card header component
-  - add vercel
   - maybe move the infura provider initiation to on mount hook in react provider
 
 later:
