@@ -1,0 +1,8 @@
+need to get the token supply of BAS, BAC
+need to get the token prices of BAS, BAC from uniswap
+  - draw out generally what it will look like
+  - add in storybook
+
+later:
+- create header and footer
+- create card, value, and card header component
