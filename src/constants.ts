@@ -1,5 +1,8 @@
 import { Tokens } from './types';
 
+export const SEIGNORAGE_EVENTS_PER_DAY = 1;
+export const DAYS_IN_YEAR = 365;
+
 export const tokens: Tokens = {
   dai: {
     symbol: 'DAI',
