@@ -1,7 +1,6 @@
 todo:
-  - list out all the stats that we need
-  - draw out generally what it will look like
-  - create header and footer
+  - create data value
+  - maybe need to choose a responsive framework - could build myself with flex tho
   - create card, value, and card header component
   - maybe move the infura provider initiation to on mount hook in react provider
 
@@ -11,16 +10,13 @@ later:
 - add svg favicon
 - fix page description
 - set page title and description via react-helmet
-- update README
-
+- mobile-repsonsiveness
+- SEO meta tags
+- add dark & light theme support
+- color scheme
 
 reach:
 - cache data on a backend service
 - frontend tracking and analytics
 
 
-for colfax:
-- write API functions that'll fetch the required data
-
-for jay:
-- focus on frontend
