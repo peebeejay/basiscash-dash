@@ -1,7 +1,6 @@
 import React, { FC, useState, createContext, useMemo, useEffect } from 'react';
-import { apiGetTokenPriceFromUniswap, apiGetTotalSupply } from '../api';
+import { apiGetData } from '../../api';
 import { State, createInitialState, Dispatcher } from './state';
-import { tokens } from '../constants';
 
 type Props = {
   children: React.ReactNode;
@@ -18,26 +17,26 @@ const DashboardProvider: FC<Props> = (props) => {
   }, []);
 
   const fetchData = async () => {
-    const [bacPrice, basPrice, bacSupply, basSupply] = await Promise.all([
-      apiGetTokenPriceFromUniswap(tokens.bac),
-      apiGetTokenPriceFromUniswap(tokens.bas),
-      apiGetTotalSupply(tokens.bac),
-      apiGetTotalSupply(tokens.bas),
-    ]);
+    const data = await apiGetData();
 
-    updateState({
-      ...state,
-      prices: {
-        ...state.prices,
-        bac: bacPrice ?? null,
-        bas: basPrice ?? null,
-      },
-      tokenSupply: {
-        ...state.tokenSupply,
-        bac: bacSupply ?? null,
-        bas: basSupply ?? null,
-      },
-    });
+    if (data) {
+      updateState({
+        data: {
+          prices: {
+            bac: data.bac_spot,
+            bacTwap: data.bac_twap,
+            bas: data.bas_spot,
+          },
+          tokenSupply: {
+            bac: data.bac_total_supply,
+            bas: data.bas_total_supply,
+          },
+          staking: {
+            basBoardroom: data.boardroom_bas,
+          },
+        },
+      });
+    }
   };
 
   const dispatcher = useMemo(() => {
