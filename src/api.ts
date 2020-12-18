@@ -3,7 +3,7 @@ import { ethers, Contract } from 'ethers';
 import { infuraConfig } from './secrets';
 import { config } from './config';
 import { tokens } from './constants';
-import { TokenConfig } from './types';
+import { ApiData, TokenConfig } from './types';
 import ERC20_ABI from './constants/ERC20_abi.json';
 import { formatUnits } from 'ethers/lib/utils';
 
@@ -40,5 +40,23 @@ export const apiGetTotalSupply = async (
     return Number(formatUnits(supply, token.decimals)).toFixed(0);
   } catch (err) {
     console.error(`Failed to fetch supply of token ${token.symbol}`);
+  }
+};
+
+export const apiGetData = async (): Promise<ApiData | undefined> => {
+  const uri = 'https://basiscash-server-nextjs.junto2015.vercel.app/api/data';
+
+  try {
+    const response = await fetch(uri, { method: 'GET' });
+    const data = await response.json();
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    /* Contains sample data */
+    return { ...data, bac_twap: 1.11 };
+    // return data;
+  } catch (error) {
+    console.warn('Failed to fetch dashboard data');
   }
 };
