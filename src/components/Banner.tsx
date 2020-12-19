@@ -58,7 +58,7 @@ export const Banner = (props: Props) => {
     prices.bacTwap,
     staking.basBoardroom,
   );
-  const basReturnDaily = getBasReturnDaily(prices.bac, returnPerBas, prices.bas);
+  const basReturnDaily = getBasReturnDaily(prices.bacSpot, returnPerBas, prices.basSpot);
 
   return (
     <Container>

@@ -23,16 +23,23 @@ const DashboardProvider: FC<Props> = (props) => {
       updateState({
         data: {
           prices: {
-            bac: data.bac_spot,
+            bacSpot: data.bac_spot,
             bacTwap: data.bac_twap,
-            bas: data.bas_spot,
+            basSpot: data.bas_spot,
           },
           tokenSupply: {
             bac: data.bac_total_supply,
-            bas: data.bas_total_supply,
+            basCirculating: data.bas_total_supply,
+            basTotalSupply: data.bas_total_supply,
           },
           staking: {
             basBoardroom: data.boardroom_bas,
+            daibacStakingpoolBas: data.daibac_stakingpool_bas,
+            daibasStakingpoolBas: data.daibas_stakingpool_bas,
+            daibasUniswapBas: data.daibas_uniswap_bas,
+          },
+          epoch: {
+            nextEpochTimestamp: data.next_seignorage_epoch,
           },
         },
       });

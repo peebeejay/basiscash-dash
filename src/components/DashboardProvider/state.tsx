@@ -7,19 +7,29 @@ export type State = {
 export type Data = {
   prices: {
     /* BAC Spot price in USD (DAI) */
-    bac: number;
+    bacSpot: number;
     /* BAC time-weighted average price */
     bacTwap: number;
     /* BAS Spot price in USD (DAI) */
-    bas: number;
+    basSpot: number;
   };
   tokenSupply: {
     bac: number;
-    bas: number;
+    basCirculating: number;
+    basTotalSupply: number;
   };
   staking: {
     /* Amount of total BAS staked in the boardroom contract */
     basBoardroom: number;
+    /* BAS rewards for staking in BAC/DAI Uniswap pool */
+    daibacStakingpoolBas: number;
+    /* BAS rewards for staking in DAI/BAS Uniswap pool */
+    daibasStakingpoolBas: number;
+    /* BAS staked within the DAI/BAS Uniswap pool */
+    daibasUniswapBas: number;
+  };
+  epoch: {
+    nextEpochTimestamp: number;
   };
 };
 
