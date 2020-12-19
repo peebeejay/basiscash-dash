@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { BigNumber } from 'bignumber.js';
 import { Data } from './DashboardProvider/state';
 import { LargeHeader } from './typography/LargeHeader';
 import { SmallHeader } from './typography/SmallHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
 import { formatNumber } from '../utils';
 import { commify } from 'ethers/lib/utils';
+import { HOURS_IN_DAY, SECONDS_IN_HOUR } from '../constants';
 
 type Props = {
   data: Data;
@@ -46,6 +48,7 @@ const StyledLargeHeader = styled(LargeHeader)`
 
 const StyledSmallHeader = styled(SmallHeader)`
   margin-top: ${rem(10)};
+  margin-bottom: ${rem(0)};
 `;
 
 export const UniPoolMetrics = (props: Props) => {
@@ -60,11 +63,28 @@ export const UniPoolMetrics = (props: Props) => {
         daibacUniswapBac,
         daibacUniswapDai,
       },
+      rewards: { daibacRewardRatePerSec, daibasRewardRatePerSec },
     },
   } = props;
 
   const basDaiTvl = daibasUniswapBas * basSpot + daibasUniswapDai;
   const bacDaiTvl = daibacUniswapBac * bacSpot + daibacUniswapDai;
+
+  const divisor1e18 = new BigNumber('1e18');
+
+  const basDaiDailyReturn = daibasRewardRatePerSec
+    .dividedBy(divisor1e18)
+    .multipliedBy(SECONDS_IN_HOUR * HOURS_IN_DAY)
+    .multipliedBy(100)
+    .multipliedBy(basSpot)
+    .dividedBy(basDaiTvl);
+
+  const bacDaiDailyReturn = daibacRewardRatePerSec
+    .dividedBy(divisor1e18)
+    .multipliedBy(SECONDS_IN_HOUR * HOURS_IN_DAY)
+    .multipliedBy(100)
+    .multipliedBy(basSpot)
+    .dividedBy(bacDaiTvl);
 
   return (
     <Container>
@@ -80,11 +100,14 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
-            <Value>{`${formatNumber(3.47, 2)}%`}</Value>
+            <Value>{`${formatNumber(basDaiDailyReturn.toNumber(), 2)}%`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Yearly):'}</Name>
-            <Value>{`${formatNumber(3.47 * 365, 2)}%`}</Value>
+            <Value>{`${formatNumber(
+              basDaiDailyReturn.multipliedBy(365).toNumber(),
+              2,
+            )}%`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>
@@ -102,11 +125,14 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
-            <Value>{`${formatNumber(1.75, 2)}%`}</Value>
+            <Value>{`${formatNumber(bacDaiDailyReturn.toNumber(), 2)}%`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Yearly):'}</Name>
-            <Value>{`${formatNumber(1.75 * 365, 2)}%`}</Value>
+            <Value>{`${formatNumber(
+              bacDaiDailyReturn.multipliedBy(365).toNumber(),
+              2,
+            )}%`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>

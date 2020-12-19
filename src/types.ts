@@ -33,4 +33,7 @@ export type ApiData = {
   daibac_uniswap_dai: number;
   /* epoch */
   next_seignorage_epoch: number;
+  /* rewards */
+  daibac_reward_rate_per_sec: string;
+  daibas_reward_rate_per_sec: string;
 };

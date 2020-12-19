@@ -1,4 +1,5 @@
 import React, { FC, useState, createContext, useMemo, useEffect } from 'react';
+import BigNumber from 'bignumber.js';
 import { apiGetData } from '../../api';
 import { State, createInitialState, Dispatcher } from './state';
 import { FETCH_DATA_INTERVAL } from '../../constants';
@@ -54,6 +55,10 @@ const DashboardProvider: FC<Props> = (props) => {
           },
           epoch: {
             nextEpochTimestamp: data.next_seignorage_epoch,
+          },
+          rewards: {
+            daibacRewardRatePerSec: new BigNumber(data.daibac_reward_rate_per_sec),
+            daibasRewardRatePerSec: new BigNumber(data.daibas_reward_rate_per_sec),
           },
         },
       });

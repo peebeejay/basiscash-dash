@@ -88,7 +88,7 @@ export const Banner = (props: Props) => {
           </>
         )}
         {!willExpand && (
-          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap} DAI.`}</Supply>
+          <Supply>{`There is expected to be no supply increase based on the current BAC TWAP price of $${prices.bacTwap} DAI.`}</Supply>
         )}
         {willDeflate && (
           <Return>

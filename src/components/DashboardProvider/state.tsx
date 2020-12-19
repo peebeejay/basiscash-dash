@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import BigNumber from 'bignumber.js';
 
 export type State = {
   data: Data | null;
@@ -39,6 +40,10 @@ export type Data = {
   };
   epoch: {
     nextEpochTimestamp: number;
+  };
+  rewards: {
+    daibacRewardRatePerSec: BigNumber;
+    daibasRewardRatePerSec: BigNumber;
   };
 };
 
