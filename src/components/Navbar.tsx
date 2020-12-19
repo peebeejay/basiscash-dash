@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { BasisCashLogo } from './Logo';
+import { BasisCashLogo as BasisCashLogoComponent } from './Logo';
 
 const Container = styled.header`
   display: flex;
@@ -11,7 +11,15 @@ const Container = styled.header`
   padding: ${rem(25)} 0;
 `;
 
-const ContentLeft = styled.div``;
+const ContentLeft = styled.a`
+  text-decoration: none;
+  color: purple;
+  transition: 200ms color ease;
+
+  &:hover {
+    color: black;
+  }
+`;
 
 const ContentRight = styled.div`
   display: flex;
@@ -44,9 +52,10 @@ const LogoContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
 `;
 
-const BasisCash = styled(BasisCashLogo)`
+const BasisCashLogo = styled(BasisCashLogoComponent)`
   height: ${rem(30)};
   width: ${rem(30)};
   margin-right: ${rem(10)};
@@ -59,9 +68,9 @@ const Name = styled.div`
 export const Navbar = () => {
   return (
     <Container>
-      <ContentLeft>
+      <ContentLeft target={'_blank'} href="https://basis.cash">
         <LogoContainer>
-          <BasisCash />
+          <BasisCashLogo />
           <Name>{'Basis Cash'}</Name>
         </LogoContainer>
       </ContentLeft>
