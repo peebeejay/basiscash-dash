@@ -2,6 +2,7 @@ import React, { FC, useState, createContext, useMemo, useEffect } from 'react';
 import { apiGetData } from '../../api';
 import { State, createInitialState, Dispatcher } from './state';
 import { FETCH_DATA_INTERVAL } from '../../constants';
+import { getCirculatingBasSupply } from '../../utils';
 
 type Props = {
   children: React.ReactNode;
@@ -34,7 +35,11 @@ const DashboardProvider: FC<Props> = (props) => {
           },
           tokenSupply: {
             bac: data.bac_total_supply,
-            basCirculating: data.bas_total_supply,
+            basCirculating: getCirculatingBasSupply(
+              data.bas_total_supply,
+              data.daibas_stakingpool_bas,
+              data.daibac_stakingpool_bas,
+            ),
             basTotalSupply: data.bas_total_supply,
             bab: data.bab_supply,
           },

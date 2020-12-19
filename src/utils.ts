@@ -34,3 +34,10 @@ export const getBasReturnDaily = (
   bacReturnPerBas: number,
   basPrice: number,
 ) => ((bacReturnPerBas * bacPrice) / basPrice) * SEIGNORAGE_EVENTS_PER_DAY;
+
+/* Calculate total cirulating BAS supply */
+export const getCirculatingBasSupply = (
+  basTotalSupply: number,
+  basDaiTreasuryRewards: number,
+  bacDaiTreasuryRewards: number,
+) => basTotalSupply - basDaiTreasuryRewards - bacDaiTreasuryRewards;
