@@ -1,7 +1,15 @@
 import { commify } from 'ethers/lib/utils';
 import { SEIGNORAGE_EVENTS_PER_DAY } from './constants';
 
+/* Only use if decimals don't matter */
 export const formatValue = (value: number) => commify(value.toFixed(2));
+
+/* Uses native JS function instead */
+export const formatNumber = (val: number, decimals: number = 2) =>
+  Number(val).toLocaleString('en', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  });
 
 const getSupplyIncreaseRaw = (bacSupply: number, bacTwap: number): number =>
   bacSupply * (bacTwap - 1);
