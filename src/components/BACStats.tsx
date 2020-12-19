@@ -1,0 +1,92 @@
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { rem } from 'polished';
+import { Data } from './DashboardProvider/state';
+import { commify } from 'ethers/lib/utils';
+import { DateTime, Interval } from 'luxon';
+
+type Props = {
+  data: Data;
+};
+
+const Container = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: ${rem(15)};
+`;
+
+const GridItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
+
+const SmallHeader = styled.h4`
+  color: purple;
+  text-align: left;
+  margin-bottom: ${rem(10)};
+`;
+
+const DataValue = styled.span`
+  font-size: ${rem(24)};
+`;
+
+export const BACStats = (props: Props) => {
+  const {
+    data: { prices, tokenSupply },
+  } = props;
+
+  const [countdown, setCountdown] = useState<string>('');
+
+  /* This hook is used to generate a string representing the duration between now
+   * and the next seignorage event 00:00 UTC
+   */
+  useEffect(() => {
+    const utc = DateTime.utc();
+    const nextEpochTime = DateTime.fromObject({
+      year: utc.year,
+      month: utc.month,
+      day: utc.day,
+      hour: 0,
+      zone: 'utc',
+    }).plus({ day: 1 });
+
+    const getCountdown = () => {
+      const difference = Interval.fromDateTimes(
+        DateTime.local(),
+        DateTime.fromSeconds(nextEpochTime.toSeconds()),
+      );
+
+      setCountdown(difference.toDuration().toFormat('hh:mm:ss'));
+    };
+
+    getCountdown();
+    const interval = setInterval(getCountdown, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <Container>
+      <GridItem>
+        <SmallHeader>{'Next Epoch'}</SmallHeader>
+        <DataValue>{countdown}</DataValue>
+      </GridItem>
+      <GridItem>
+        <SmallHeader>{'BAC Spot Price'}</SmallHeader>
+        <DataValue>{`$${prices.bacSpot} DAI`}</DataValue>
+      </GridItem>
+      <GridItem>
+        <SmallHeader>{'BAC TWAP Price'}</SmallHeader>
+        <DataValue>{`$${prices.bacTwap} DAI`}</DataValue>
+      </GridItem>
+      <GridItem>
+        <SmallHeader>{'BAC Supply'}</SmallHeader>
+        <DataValue>{`${commify(tokenSupply.bac)}`}</DataValue>
+      </GridItem>
+    </Container>
+  );
+};
