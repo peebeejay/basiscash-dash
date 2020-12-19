@@ -4,6 +4,7 @@ import { rem } from 'polished';
 import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
 import { DateTime, Interval } from 'luxon';
+import { formatNumber } from '../utils';
 
 type Props = {
   data: Data;
@@ -13,7 +14,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: ${rem(15)};
+  margin-bottom: ${rem(35)};
 `;
 
 const GridItem = styled.div`
@@ -30,6 +31,7 @@ const SmallHeader = styled.h4`
 
 const DataValue = styled.span`
   font-size: ${rem(24)};
+  text-align: left;
 `;
 
 export const BACStats = (props: Props) => {
@@ -77,11 +79,11 @@ export const BACStats = (props: Props) => {
       </GridItem>
       <GridItem>
         <SmallHeader>{'BAC Spot Price'}</SmallHeader>
-        <DataValue>{`$${prices.bacSpot} DAI`}</DataValue>
+        <DataValue>{`$${formatNumber(prices.bacSpot, 3)} DAI`}</DataValue>
       </GridItem>
       <GridItem>
         <SmallHeader>{'BAC TWAP Price'}</SmallHeader>
-        <DataValue>{`$${prices.bacTwap} DAI`}</DataValue>
+        <DataValue>{`$${formatNumber(prices.bacTwap, 3)} DAI`}</DataValue>
       </GridItem>
       <GridItem>
         <SmallHeader>{'BAC Supply'}</SmallHeader>
