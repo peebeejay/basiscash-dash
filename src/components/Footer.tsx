@@ -21,14 +21,18 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  font-weight: 700;
 `;
 
 const Link = styled.a`
   color: black;
-  margin-right: ${rem(10)};
   text-decoration: none;
   transition: 250ms color ease;
+
+  &:not(:last-child) {
+    margin-right: ${rem(10)};
+  }
 
   &:hover {
     color: purple;
@@ -40,15 +44,17 @@ const Mode = styled.div`
 `;
 
 const Divider = styled.div`
-  font-size: ${rem(10)};
-  font-weight: 700;
+  font-size: ${rem(16)};
   margin: 0 ${rem(5)};
 `;
 
 export const Footer = (props: Props) => {
   return (
     <Container>
-      <MadeBy>{'made by saitama & junto'}</MadeBy>
+      <MadeBy>
+        {'made by '}
+        <b>{'saitama & junto '}</b>
+      </MadeBy>
       <Divider>{'|'}</Divider>
       <Links>
         <Link href="https://twitter.com/BasisCash" target={'_blank'}>
