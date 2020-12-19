@@ -28,7 +28,7 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: ${rem(15)};
+  margin-bottom: ${rem(5)};
   flex: 1;
 `;
 

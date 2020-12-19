@@ -21,7 +21,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   margin-bottom: ${rem(10)};
-  padding: ${rem(50)};
+  padding: ${rem(40)};
 `;
 
 const Content = styled.div`
