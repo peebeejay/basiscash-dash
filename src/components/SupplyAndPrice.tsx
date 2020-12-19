@@ -5,6 +5,7 @@ import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
 import { formatNumber } from '../utils';
 import { LargeHeader } from './typography/LargeHeader';
+import { ListItem, Name, Value } from './typography/ListItem';
 
 type Props = {
   data: Data;
@@ -32,19 +33,6 @@ const PriceContainer = styled(SectionContainer)`
   margin-left: ${rem(30)};
 `;
 
-const ListItem = styled.div`
-  font-size: ${rem(20)};
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex: 1;
-  width: 100%;
-  margin-bottom: ${rem(10)};
-`;
-
-const Name = styled.div``;
-const Value = styled.div``;
-
 export const PriceAndSupply = (props: Props) => {
   const {
     data: { tokenSupply, prices },
@@ -55,7 +43,7 @@ export const PriceAndSupply = (props: Props) => {
       <SupplyContainer>
         <LargeHeader>{'Supply'}</LargeHeader>
         <ListItem>
-          <Name>{'BAS Supply'}</Name>
+          <Name>{'BAS Circ. Supply'}</Name>
           <Value>{commify(tokenSupply.basCirculating)}</Value>
         </ListItem>
         <ListItem>
