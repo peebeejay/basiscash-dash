@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Banner } from './Banner';
 import { DashboardState } from './DashboardProvider';
 import { BACStats } from './BACStats';
+import { PriceAndSupply } from './SupplyAndPrice';
 
 export const Container = styled.section`
   display: flex;
@@ -24,6 +25,7 @@ export const Dashboard = () => {
     <Container>
       <Banner data={data} />
       <BACStats data={data} />
+      <PriceAndSupply data={data} />
     </Container>
   );
 };
