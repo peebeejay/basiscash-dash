@@ -20,7 +20,7 @@ const Container = styled.section`
   color: white;
   display: flex;
   flex-direction: column;
-  margin-bottom: ${rem(15)};
+  margin-bottom: ${rem(25)};
   padding: ${rem(60)} ${rem(50)} ${rem(50)};
 `;
 
@@ -39,7 +39,6 @@ const NextEpoch = styled.div`
 const Supply = styled.div`
   font-size: ${rem(22)};
   font-weight: 600;
-  // margin-bottom: ${rem(10)};
   line-height: ${rem(30)};
 `;
 
@@ -79,7 +78,7 @@ export const Banner = (props: Props) => {
           </>
         )}
         {supplyIncrease < 0 && (
-          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap}`}</Supply>
+          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap} DAI.`}</Supply>
         )}
       </Content>
     </Container>
