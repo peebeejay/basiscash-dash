@@ -5,7 +5,7 @@ export const SEIGNORAGE_EVENTS_PER_DAY = 1;
 export const DAYS_IN_YEAR = 365;
 
 /* Application Constants */
-export const FETCH_DATA_INTERVAL = 15000;
+export const FETCH_DATA_INTERVAL = 20000; // milliseconds
 
 export const tokens: Tokens = {
   dai: {
