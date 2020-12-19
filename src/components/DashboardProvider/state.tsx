@@ -30,6 +30,12 @@ export type Data = {
     daibasStakingpoolBas: number;
     /* BAS staked within the DAI/BAS Uniswap pool */
     daibasUniswapBas: number;
+    /* DAI staked within the DAI/BAS Uniswap pool */
+    daibasUniswapDai: number;
+    /* BAC staked within the DAI/BAC Uniswap pool */
+    daibacUniswapBac: number;
+    /* DAI staked within the DAI/BAC Uniswap pool */
+    daibacUniswapDai: number;
   };
   epoch: {
     nextEpochTimestamp: number;

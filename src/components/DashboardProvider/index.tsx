@@ -48,6 +48,9 @@ const DashboardProvider: FC<Props> = (props) => {
             daibacStakingpoolBas: data.daibac_stakingpool_bas,
             daibasStakingpoolBas: data.daibas_stakingpool_bas,
             daibasUniswapBas: data.daibas_uniswap_bas,
+            daibasUniswapDai: data.daibas_uniswap_dai,
+            daibacUniswapBac: data.daibac_uniswap_bac,
+            daibacUniswapDai: data.daibac_uniswap_dai,
           },
           epoch: {
             nextEpochTimestamp: data.next_seignorage_epoch,

@@ -51,9 +51,20 @@ const StyledSmallHeader = styled(SmallHeader)`
 export const UniPoolMetrics = (props: Props) => {
   const {
     data: {
-      staking: { daibasStakingpoolBas, daibacStakingpoolBas },
+      prices: { bacSpot, basSpot },
+      staking: {
+        daibasStakingpoolBas,
+        daibacStakingpoolBas,
+        daibasUniswapBas,
+        daibasUniswapDai,
+        daibacUniswapBac,
+        daibacUniswapDai,
+      },
     },
   } = props;
+
+  const basDaiTvl = daibasUniswapBas * basSpot + daibasUniswapDai;
+  const bacDaiTvl = daibacUniswapBac * bacSpot + daibacUniswapDai;
 
   return (
     <Container>
@@ -65,7 +76,7 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(4500300, 2)} DAI`}</Value>
+            <Value>{`$${formatNumber(basDaiTvl, 2)} DAI`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
@@ -87,7 +98,7 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(41600300, 2)} DAI`}</Value>
+            <Value>{`$${formatNumber(bacDaiTvl, 2)} DAI`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>

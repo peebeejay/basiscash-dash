@@ -23,8 +23,14 @@ export type ApiData = {
   bas_spot: number;
   bas_total_supply: number;
   boardroom_bas: number;
+  /* BAS rewards */
   daibac_stakingpool_bas: number;
   daibas_stakingpool_bas: number;
+  /* uniswap token amounts */
   daibas_uniswap_bas: number;
+  daibas_uniswap_dai: number;
+  daibac_uniswap_bac: number;
+  daibac_uniswap_dai: number;
+  /* epoch */
   next_seignorage_epoch: number;
 };
