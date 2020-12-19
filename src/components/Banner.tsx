@@ -79,7 +79,7 @@ export const Banner = (props: Props) => {
           </>
         )}
         {supplyIncrease < 0 && (
-          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap}.`}</Supply>
+          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap}`}</Supply>
         )}
       </Content>
     </Container>

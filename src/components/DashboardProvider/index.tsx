@@ -1,6 +1,7 @@
 import React, { FC, useState, createContext, useMemo, useEffect } from 'react';
 import { apiGetData } from '../../api';
 import { State, createInitialState, Dispatcher } from './state';
+import { FETCH_DATA_INTERVAL } from '../../constants';
 
 type Props = {
   children: React.ReactNode;
@@ -14,6 +15,9 @@ const DashboardProvider: FC<Props> = (props) => {
 
   useEffect(() => {
     fetchData();
+    const interval = setInterval(fetchData, FETCH_DATA_INTERVAL);
+
+    return () => clearInterval(interval);
   }, []);
 
   const fetchData = async () => {
