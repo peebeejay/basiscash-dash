@@ -28,9 +28,14 @@ const Link = styled.a`
   color: purple;
   cursor: pointer;
   text-decoration: none;
+  transition: 250ms color ease;
 
   &:not(:last-child) {
     margin-right: ${rem(15)};
+  }
+
+  &:hover {
+    color: black;
   }
 `;
 
@@ -79,7 +84,7 @@ export const Navbar = () => {
           >
             trade
           </Link>
-          <Link>wallet</Link>
+          <Link>wallet (soon)</Link>
         </Links>
       </ContentRight>
     </Container>

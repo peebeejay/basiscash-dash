@@ -9,7 +9,7 @@ const Container = styled.footer`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: ${rem(5)};
+  margin-bottom: ${rem(10)};
   font-size: ${rem(14)};
 `;
 
