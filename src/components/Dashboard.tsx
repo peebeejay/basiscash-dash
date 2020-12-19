@@ -6,6 +6,7 @@ import { BACStats } from './BACStats';
 import { PriceAndSupply } from './SupplyAndPrice';
 import { BASMetrics } from './BASMetrics';
 import { UniPoolMetrics } from './UniPoolMetrics';
+import { WalletBalance } from './WalletBalance';
 
 export const Container = styled.section`
   display: flex;
@@ -30,6 +31,7 @@ export const Dashboard = () => {
       <PriceAndSupply data={data} />
       <BASMetrics data={data} />
       <UniPoolMetrics data={data} />
+      <WalletBalance />
     </Container>
   );
 };
