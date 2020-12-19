@@ -60,7 +60,7 @@ export const PriceAndSupply = (props: Props) => {
         </ListItem>
         <ListItem>
           <Name>{'BAB Price:'}</Name>
-          <Value>{`$${formatNumber(prices.babSpot)} DAI`}</Value>
+          <Value>{`$${formatNumber(prices.bacTwap ** 2, 3)} DAI`}</Value>
         </ListItem>
       </PriceContainer>
     </RowContainer>
