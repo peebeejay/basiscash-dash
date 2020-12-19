@@ -4,6 +4,7 @@ todo:
 later:
 
 - add interval to fetch data periodically, maybe every 15s
+- my % of staked bas; my % of liquidity pools?
 - fix page description
 - set page title and description via react-helmet
 - mobile-repsonsiveness
