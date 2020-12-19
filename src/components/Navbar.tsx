@@ -62,10 +62,21 @@ export const Navbar = () => {
       </ContentLeft>
       <ContentRight>
         <Links>
-          <Link href="https://basis.cash">app</Link>
-          <Link href="https://docs.basis.cash/">docs</Link>
-          <Link href="https://duneanalytics.com/donkhalil/basis-cash_1">analytics</Link>
-          <Link href="https://app.uniswap.org/#/swap?inputCurrency=0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a&outputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f">
+          <Link target={'_blank'} href="https://basis.cash">
+            app
+          </Link>
+          <Link target={'_blank'} href="https://docs.basis.cash/">
+            docs
+          </Link>
+          <Link target={'_blank'} href="https://duneanalytics.com/donkhalil/basis-cash_1">
+            analytics
+          </Link>
+          <Link
+            target={'_blank'}
+            href={
+              'https://app.uniswap.org/#/swap?inputCurrency=0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a&outputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f'
+            }
+          >
             trade
           </Link>
           <Link>wallet</Link>
