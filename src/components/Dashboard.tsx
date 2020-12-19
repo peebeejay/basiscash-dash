@@ -31,7 +31,6 @@ export const Dashboard = () => {
       <PriceAndSupply data={data} />
       <BASMetrics data={data} />
       <UniPoolMetrics data={data} />
-      <WalletBalance />
     </Container>
   );
 };
