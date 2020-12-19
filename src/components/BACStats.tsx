@@ -5,6 +5,7 @@ import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
 import { DateTime, Interval } from 'luxon';
 import { formatNumber } from '../utils';
+import { SmallHeader } from './typography/SmallHeader';
 
 type Props = {
   data: Data;
@@ -21,12 +22,6 @@ const GridItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-`;
-
-const SmallHeader = styled.h4`
-  color: purple;
-  text-align: left;
-  margin-bottom: ${rem(10)};
 `;
 
 const DataValue = styled.span`

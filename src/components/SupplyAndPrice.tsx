@@ -4,6 +4,7 @@ import { rem } from 'polished';
 import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
 import { formatNumber } from '../utils';
+import { LargeHeader } from './typography/LargeHeader';
 
 type Props = {
   data: Data;
@@ -29,14 +30,6 @@ const SupplyContainer = styled(SectionContainer)`
 
 const PriceContainer = styled(SectionContainer)`
   margin-left: ${rem(30)};
-`;
-
-const LargeHeader = styled.h2`
-  color: purple;
-  text-align: left;
-  margin-bottom: ${rem(10)};
-  font-size: ${rem(24)};
-  font-weight: 700;
 `;
 
 const ListItem = styled.div`
