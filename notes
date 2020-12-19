@@ -1,21 +1,13 @@
-todo:
-  - deal with contraction state
+next day:
+  - add metamask wallet integration
+  - add dark & light theme support
 
 later:
-
-- add interval to fetch data periodically, maybe every 15s
 - my % of staked bas; my % of liquidity pools?
-- fix page description
-- set page title and description via react-helmet
-- mobile-repsonsiveness
+- mobile-responsiveness
 - SEO meta tags
-- add dark & light theme support
-- color scheme
-- every now and then re-fetch data
 - maybe move the infura provider initiation to on mount hook in react provider
 
 reach:
 - frontend tracking and analytics
 - look into abi type generation
-
-
