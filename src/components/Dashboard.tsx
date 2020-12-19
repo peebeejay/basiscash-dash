@@ -4,6 +4,7 @@ import { Banner } from './Banner';
 import { DashboardState } from './DashboardProvider';
 import { BACStats } from './BACStats';
 import { PriceAndSupply } from './SupplyAndPrice';
+import { BASMetrics } from './BASMetrics';
 
 export const Container = styled.section`
   display: flex;
@@ -26,6 +27,7 @@ export const Dashboard = () => {
       <Banner data={data} />
       <BACStats data={data} />
       <PriceAndSupply data={data} />
+      <BASMetrics data={data} />
     </Container>
   );
 };
