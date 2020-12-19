@@ -32,14 +32,15 @@ const Content = styled.div`
 
 const NextEpoch = styled.div`
   font-size: ${rem(18)};
-  margin-bottom: ${rem(10)};
+  margin-bottom: ${rem(5)};
   font-weight: 500;
 `;
 
 const Supply = styled.div`
   font-size: ${rem(22)};
   font-weight: 600;
-  margin-bottom: ${rem(10)};
+  // margin-bottom: ${rem(10)};
+  line-height: ${rem(30)};
 `;
 
 const Return = styled.div`
@@ -64,15 +65,22 @@ export const Banner = (props: Props) => {
     <Container>
       <Content>
         <NextEpoch>{'Next Epoch:'}</NextEpoch>
-        <Supply>{`The supply will be increased by ${formatValue(
-          supplyIncrease,
-        )} BAC.`}</Supply>
+        {supplyIncrease > 0 && (
+          <>
+            <Supply>{`The supply will be increased by ${formatValue(
+              supplyIncrease,
+            )} BAC.`}</Supply>
 
-        <Return>{`Returning ${formatValue(returnPerBas)} BAC (${formatValue(
-          basReturnDaily * 100,
-        )}% Daily & ${formatValue(
-          basReturnDaily * DAYS_IN_YEAR * 100,
-        )}% APY) per BAS`}</Return>
+            <Return>{`Returning ${formatValue(returnPerBas)} BAC (${formatValue(
+              basReturnDaily * 100,
+            )}% Daily & ${formatValue(
+              basReturnDaily * DAYS_IN_YEAR * 100,
+            )}% APY) per BAS.`}</Return>
+          </>
+        )}
+        {supplyIncrease < 0 && (
+          <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap}.`}</Supply>
+        )}
       </Content>
     </Container>
   );
