@@ -6,9 +6,14 @@ import {
   getReturnPerBas,
   getBasReturnDaily,
   formatValue,
+  formatNumber,
 } from '../utils';
 import { Data } from './DashboardProvider/state';
-import { DAYS_IN_YEAR } from '../constants';
+import {
+  DAYS_IN_YEAR,
+  DEFLATION_THRESHOLD_PRICE,
+  INFLATION_THRESHOLD_PRICE,
+} from '../constants';
 
 type Props = {
   data: Data;
@@ -53,32 +58,44 @@ export const Banner = (props: Props) => {
   } = props;
 
   const supplyIncrease = getSupplyIncrease(tokenSupply.bac, prices.bacTwap);
+
   const returnPerBas = getReturnPerBas(
     tokenSupply.bac,
     prices.bacTwap,
     staking.basBoardroom,
   );
   const basReturnDaily = getBasReturnDaily(prices.bacSpot, returnPerBas, prices.basSpot);
+  const willExpand = prices.bacTwap > INFLATION_THRESHOLD_PRICE;
+  const willDeflate = prices.bacTwap < DEFLATION_THRESHOLD_PRICE;
 
   return (
     <Container>
       <Content>
         <NextEpoch>{'Next Epoch:'}</NextEpoch>
-        {supplyIncrease > 0 && (
+        {willExpand && (
           <>
             <Supply>{`The supply will be increased by ${formatValue(
               supplyIncrease,
             )} BAC.`}</Supply>
 
-            <Return>{`Returning ${formatValue(returnPerBas)} BAC (${formatValue(
-              basReturnDaily * 100,
-            )}% Daily & ${formatValue(
-              basReturnDaily * DAYS_IN_YEAR * 100,
-            )}% APY) per BAS.`}</Return>
+            <Return>
+              {`Returning ${formatValue(returnPerBas)} BAC (${formatValue(
+                basReturnDaily * 100,
+              )}% Daily & ${formatValue(
+                basReturnDaily * DAYS_IN_YEAR * 100,
+              )}% APY) per BAS.`}
+            </Return>
           </>
         )}
-        {supplyIncrease < 0 && (
+        {!willExpand && (
           <Supply>{`There will be no supply increase based on the current BAC TWAP price of $${prices.bacTwap} DAI.`}</Supply>
+        )}
+        {willDeflate && (
+          <Return>
+            {`Basis Bonds (BAB) can be purchased for $${formatNumber(
+              prices.bacTwap ** 2,
+            )} DAI to deflate BAC supply.`}
+          </Return>
         )}
       </Content>
     </Container>

@@ -6,6 +6,8 @@ export const DAYS_IN_YEAR = 365;
 
 /* Application Constants */
 export const FETCH_DATA_INTERVAL = 20000; // milliseconds
+export const INFLATION_THRESHOLD_PRICE = 1.05;
+export const DEFLATION_THRESHOLD_PRICE = 0.95;
 
 export const tokens: Tokens = {
   dai: {
