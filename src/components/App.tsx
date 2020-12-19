@@ -5,6 +5,7 @@ import { Dashboard } from './Dashboard';
 import DashboardProvider from './DashboardProvider';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { Helmet } from './Helmet';
 
 const Container = styled.div`
   display: flex;
@@ -55,6 +56,7 @@ export const App = () => {
           </Content>
         </Container>
       </DashboardProvider>
+      <Helmet />
     </ThemeProvider>
   );
 };
