@@ -30,11 +30,13 @@ const DashboardProvider: FC<Props> = (props) => {
             bacSpot: data.bac_spot,
             bacTwap: data.bac_twap,
             basSpot: data.bas_spot,
+            babSpot: data.bab_spot,
           },
           tokenSupply: {
             bac: data.bac_total_supply,
             basCirculating: data.bas_total_supply,
             basTotalSupply: data.bas_total_supply,
+            bab: data.bab_supply,
           },
           staking: {
             basBoardroom: data.boardroom_bas,

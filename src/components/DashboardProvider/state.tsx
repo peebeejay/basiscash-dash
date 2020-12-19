@@ -12,11 +12,14 @@ export type Data = {
     bacTwap: number;
     /* BAS Spot price in USD (DAI) */
     basSpot: number;
+    /* BAB Spot Price in USD (DAI) */
+    babSpot: number;
   };
   tokenSupply: {
     bac: number;
     basCirculating: number;
     basTotalSupply: number;
+    bab: number;
   };
   staking: {
     /* Amount of total BAS staked in the boardroom contract */
