@@ -1,22 +1,20 @@
 todo:
-  - create data value
-  - maybe need to choose a responsive framework - could build myself with flex tho
-  - create card, value, and card header component
-  - maybe move the infura provider initiation to on mount hook in react provider
+  - deal with contraction state
 
 later:
-- look into abi type generation
+
 - add interval to fetch data periodically, maybe every 15s
-- add svg favicon
 - fix page description
 - set page title and description via react-helmet
 - mobile-repsonsiveness
 - SEO meta tags
 - add dark & light theme support
 - color scheme
+- every now and then re-fetch data
+- maybe move the infura provider initiation to on mount hook in react provider
 
 reach:
-- cache data on a backend service
 - frontend tracking and analytics
+- look into abi type generation
 
 
