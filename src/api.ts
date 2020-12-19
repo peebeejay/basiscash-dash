@@ -53,9 +53,7 @@ export const apiGetData = async (): Promise<ApiData | undefined> => {
       throw new Error(data.error);
     }
 
-    /* Contains sample data */
-    return { ...data, bac_twap: 1.11 };
-    // return data;
+    return data;
   } catch (error) {
     console.warn('Failed to fetch dashboard data');
   }
