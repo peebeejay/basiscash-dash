@@ -21,7 +21,7 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: ${rem(15)};
+  margin-bottom: ${rem(10)};
   flex: 1;
 `;
 
@@ -43,11 +43,11 @@ export const PriceAndSupply = (props: Props) => {
       <SupplyContainer>
         <LargeHeader>{'Supply'}</LargeHeader>
         <ListItem>
-          <Name>{'BAS Circ. Supply'}</Name>
+          <Name>{'BAS Circ Supply:'}</Name>
           <Value>{commify(tokenSupply.basCirculating)}</Value>
         </ListItem>
         <ListItem>
-          <Name>{'BAB Supply'}</Name>
+          <Name>{'BAB Supply:'}</Name>
           <Value>{commify(tokenSupply.bab)}</Value>
         </ListItem>
       </SupplyContainer>
@@ -55,11 +55,11 @@ export const PriceAndSupply = (props: Props) => {
       <PriceContainer>
         <LargeHeader>{'Price'}</LargeHeader>
         <ListItem>
-          <Name>{'BAS Price'}</Name>
+          <Name>{'BAS Price:'}</Name>
           <Value>{`$${formatNumber(prices.basSpot)} DAI`}</Value>
         </ListItem>
         <ListItem>
-          <Name>{'BAB Price'}</Name>
+          <Name>{'BAB Price:'}</Name>
           <Value>{`$${formatNumber(prices.babSpot)} DAI`}</Value>
         </ListItem>
       </PriceContainer>

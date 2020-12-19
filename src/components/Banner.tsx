@@ -20,8 +20,8 @@ const Container = styled.section`
   color: white;
   display: flex;
   flex-direction: column;
-  margin-bottom: ${rem(25)};
-  padding: ${rem(60)} ${rem(50)} ${rem(50)};
+  margin-bottom: ${rem(10)};
+  padding: ${rem(50)};
 `;
 
 const Content = styled.div`

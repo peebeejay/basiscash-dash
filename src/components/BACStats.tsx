@@ -15,7 +15,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: ${rem(35)};
+  margin-bottom: ${rem(10)};
 `;
 
 const GridItem = styled.div`

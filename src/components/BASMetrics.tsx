@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { commify } from 'ethers/lib/utils';
 import { Data } from './DashboardProvider/state';
 import { LargeHeader } from './typography/LargeHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
@@ -26,7 +27,7 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: ${rem(15)};
+  margin-bottom: ${rem(10)};
   flex: 1;
 `;
 
@@ -41,7 +42,7 @@ const LeftContainer = styled(SectionContainer)`
 export const BASMetrics = (props: Props) => {
   const {
     data: {
-      tokenSupply: { basCirculating },
+      tokenSupply: { basCirculating, basTotalSupply },
       staking: { basBoardroom, daibasUniswapBas },
     },
   } = props;
@@ -69,6 +70,10 @@ export const BASMetrics = (props: Props) => {
           <ListItem>
             <Name>{'BAS in DAI/BAS Pool'}</Name>
             <Value>{`${formatNumber(basInDaiBasUniPoolPercent, 2)}%`}</Value>
+          </ListItem>
+          <ListItem>
+            <Name>{'Total BAS Supply'}</Name>
+            <Value>{`${commify(basTotalSupply)}`}</Value>
           </ListItem>
         </LeftContainer>
       </RowContainer>
