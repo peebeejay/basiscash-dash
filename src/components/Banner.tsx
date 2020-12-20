@@ -90,10 +90,10 @@ export const Banner = (props: Props) => {
         {!willExpand && (
           <Supply>{`There is expected to be no supply increase based on the current BAC TWAP price of $${prices.bacTwap} DAI.`}</Supply>
         )}
-        {willDeflate && (
+        {prices.babSpot < 1.0 && (
           <Return>
             {`Basis Bonds (BAB) can be purchased for $${formatNumber(
-              prices.bacTwap ** 2,
+              prices.babSpot,
             )} DAI to deflate BAC supply.`}
           </Return>
         )}
