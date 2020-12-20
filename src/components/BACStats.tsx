@@ -16,6 +16,7 @@ const Container = styled.section`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: ${rem(10)};
+  color: ${({ theme }) => theme.textColor};
 
   @media (max-width: ${rem(800)}) {
     flex-wrap: wrap;

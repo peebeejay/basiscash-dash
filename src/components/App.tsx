@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { rem } from 'polished';
+import { ThemeProvider } from './ThemeProvider';
 import { Dashboard } from './Dashboard';
 import DashboardProvider from './DashboardProvider';
 import { Navbar } from './Navbar';
@@ -12,6 +13,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: ${({ theme }) => theme.backgroundColor};
 `;
 
 const Content = styled.main`
@@ -50,7 +52,7 @@ export const App = () => {
   }, [user]);
 
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider>
       <DashboardProvider>
         <Container>
           <Content>

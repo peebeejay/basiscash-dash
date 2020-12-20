@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 export const LargeHeader = styled.h2`
-  color: purple;
+  color: ${({ theme }) => theme.headerColor};
   text-align: left;
   margin-bottom: ${rem(10)};
   font-size: ${rem(24)};

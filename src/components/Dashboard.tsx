@@ -6,13 +6,12 @@ import { BACStats } from './BACStats';
 import { PriceAndSupply } from './SupplyAndPrice';
 import { BASMetrics } from './BASMetrics';
 import { UniPoolMetrics } from './UniPoolMetrics';
-import { WalletBalance } from './WalletBalance';
 
 export const Container = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-grow: 2;
-  background-color: white; // noctiz azeureus blue
+  background-color: ${({ theme }) => theme.backgroundColor};
   flex-direction: column;
   width: 100%;
 `;

@@ -13,11 +13,11 @@ const Container = styled.header`
 
 const ContentLeft = styled.a`
   text-decoration: none;
-  color: purple;
+  color: ${({ theme }) => theme.headerColor};
   transition: 200ms color ease;
 
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.textColor};
   }
 `;
 
@@ -37,7 +37,7 @@ const Links = styled.div`
 
 const Link = styled.a`
   font-weight: 700;
-  color: purple;
+  color: ${({ theme }) => theme.headerColor};
   cursor: pointer;
   text-decoration: none;
   transition: 250ms color ease;
@@ -47,7 +47,7 @@ const Link = styled.a`
   }
 
   &:hover {
-    color: black;
+    color: ${({ theme }) => theme.textColor};
   }
 `;
 

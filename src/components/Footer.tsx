@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { rem } from 'polished';
-
-type Props = {};
+import { ThemeDispatchContext } from './ThemeProvider';
+import { ThemeNames } from '../theme';
 
 const Container = styled.footer`
   display: flex;
@@ -14,7 +14,7 @@ const Container = styled.footer`
 `;
 
 const MadeBy = styled.div`
-  color: black;
+  color: ${({ theme }) => theme.textColor};
 `;
 
 const Links = styled.div`
@@ -30,7 +30,7 @@ const Links = styled.div`
 `;
 
 const Link = styled.a`
-  color: black;
+  color: ${({ theme }) => theme.textColor};
   text-decoration: none;
   transition: 250ms color ease;
 
@@ -39,20 +39,32 @@ const Link = styled.a`
   }
 
   &:hover {
-    color: purple;
+    color: ${({ theme }) => theme.headerColor};
   }
 `;
 
 const Mode = styled.div`
-  color: black;
+  color: ${({ theme }) => theme.textColor};
+  transition: 250ms color ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.headerColor};
+    cursor: pointer;
+  }
 `;
 
 const Divider = styled.div`
+  color: ${({ theme }) => theme.textColor};
   font-size: ${rem(16)};
   margin: 0 ${rem(5)};
 `;
 
-export const Footer = (props: Props) => {
+export const Footer = () => {
+  const dispatch = useContext(ThemeDispatchContext);
+  const theme = useContext(ThemeContext);
+
+  console.log(theme);
+
   return (
     <Container>
       <MadeBy>
@@ -81,7 +93,9 @@ export const Footer = (props: Props) => {
         </Link>
       </Links>
       <Divider>{'|'}</Divider>
-      <Mode>theme (soon)</Mode>
+      <Mode onClick={() => dispatch.toggleTheme()}>
+        {theme.name === ThemeNames.light ? 'light mode 🌞' : 'dark mode 🌙'}{' '}
+      </Mode>
     </Container>
   );
 };

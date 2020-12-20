@@ -21,7 +21,7 @@ type Props = {
 
 const Container = styled.section`
   text-align: left;
-  background-color: purple;
+  background-color: ${({ theme }) => theme.bannerColor};
   color: white;
   display: flex;
   flex-direction: column;
