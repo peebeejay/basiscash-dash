@@ -16,12 +16,22 @@ const Container = styled.section`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: ${rem(10)};
+
+  @media (max-width: ${rem(800)}) {
+    flex-wrap: wrap;
+    margin-right: ${rem(20)};
+    margin-left: ${rem(20)};
+  }
 `;
 
 const GridItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: ${rem(800)}) {
+    flex: 50%;
+  }
 `;
 
 const DataValue = styled.span`

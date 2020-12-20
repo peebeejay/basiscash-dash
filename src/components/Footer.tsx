@@ -23,6 +23,10 @@ const Links = styled.div`
   justify-content: center;
   letter-spacing: -0.3px;
   font-weight: 700;
+
+  @media (max-width: ${rem(600)}) {
+    display: none;
+  }
 `;
 
 const Link = styled.a`

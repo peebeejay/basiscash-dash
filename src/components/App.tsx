@@ -22,6 +22,10 @@ const Content = styled.main`
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+
+  @media (max-width: ${rem(800)}) {
+    width: 100%;
+  }
 `;
 
 export const App = () => {

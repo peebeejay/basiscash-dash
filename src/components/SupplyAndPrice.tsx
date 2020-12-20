@@ -15,6 +15,10 @@ const RowContainer = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: ${rem(800)}) {
+    flex-wrap: wrap;
+  }
 `;
 
 const SectionContainer = styled.section`
@@ -22,15 +26,27 @@ const SectionContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: ${rem(10)};
-  flex: 1;
+  flex: 50%;
+
+  @media (max-width: ${rem(800)}) {
+    flex: 100%;
+  }
 `;
 
 const SupplyContainer = styled(SectionContainer)`
   margin-right: ${rem(30)};
+
+  @media (max-width: ${rem(800)}) {
+    margin: 0 ${rem(20)};
+  }
 `;
 
 const PriceContainer = styled(SectionContainer)`
   margin-left: ${rem(30)};
+
+  @media (max-width: ${rem(800)}) {
+    margin: 0 ${rem(20)};
+  }
 `;
 
 export const PriceAndSupply = (props: Props) => {

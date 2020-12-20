@@ -18,12 +18,21 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: ${rem(800)}) {
+    margin-right: ${rem(20)};
+    margin-left: ${rem(20)};
+  }
 `;
 
 const RowContainer = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: ${rem(800)}) {
+    flex-wrap: wrap;
+  }
 `;
 
 const SectionContainer = styled.section`
@@ -32,14 +41,26 @@ const SectionContainer = styled.section`
   justify-content: space-between;
   margin-bottom: ${rem(5)};
   flex: 1;
+
+  @media (max-width: ${rem(800)}) {
+    flex: 100%;
+  }
 `;
 
 const RightContainer = styled(SectionContainer)`
   margin-right: ${rem(30)};
+
+  @media (max-width: ${rem(800)}) {
+    margin-right: 0;
+  }
 `;
 
 const LeftContainer = styled(SectionContainer)`
   margin-left: ${rem(30)};
+
+  @media (max-width: ${rem(800)}) {
+    margin-left: 0;
+  }
 `;
 
 const StyledLargeHeader = styled(LargeHeader)`

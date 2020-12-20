@@ -24,6 +24,10 @@ const ContentLeft = styled.a`
 const ContentRight = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (max-width: ${rem(600)}) {
+    display: none;
+  }
 `;
 
 const Links = styled.div`
@@ -53,6 +57,10 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: ${rem(800)}) {
+    margin-left: ${rem(10)};
+  }
 `;
 
 const BasisCashLogo = styled(BasisCashLogoComponent)`
