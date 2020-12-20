@@ -38,6 +38,10 @@ const GridItem = styled.div`
 const DataValue = styled.span`
   font-size: ${rem(24)};
   text-align: left;
+
+  @media (max-width: ${rem(800)}) {
+    font-size: ${rem(20)};
+  }
 `;
 
 export const BACStats = (props: Props) => {

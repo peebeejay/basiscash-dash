@@ -7,4 +7,8 @@ export const LargeHeader = styled.h2`
   margin-bottom: ${rem(10)};
   font-size: ${rem(24)};
   font-weight: 700;
+
+  @media (max-width: ${rem(800)}) {
+    font-size: ${rem(20)};
+  }
 `;

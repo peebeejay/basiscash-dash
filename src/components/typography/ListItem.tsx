@@ -10,6 +10,10 @@ export const ListItem = styled.div`
   flex: 1;
   width: 100%;
   margin-bottom: ${rem(10)};
+
+  @media (max-width: ${rem(800)}) {
+    font-size: ${rem(16)};
+  }
 `;
 
 export const Name = styled.div``;
