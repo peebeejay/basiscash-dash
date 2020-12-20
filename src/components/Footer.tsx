@@ -63,8 +63,6 @@ export const Footer = () => {
   const dispatch = useContext(ThemeDispatchContext);
   const theme = useContext(ThemeContext);
 
-  console.log(theme);
-
   return (
     <Container>
       <MadeBy>
