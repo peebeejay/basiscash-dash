@@ -6,8 +6,8 @@ later:
 - my % of staked bas; my % of liquidity pools?
 - mobile-responsiveness
 - SEO meta tags
+-
 - maybe move the infura provider initiation to on mount hook in react provider
 
 reach:
-- frontend tracking and analytics
 - look into abi type generation
