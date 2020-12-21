@@ -11,6 +11,7 @@ const Container = styled.footer`
   align-items: center;
   margin-bottom: ${rem(10)};
   font-size: ${rem(14)};
+  line-height: ${rem(16)};
 `;
 
 const MadeBy = styled.div`
@@ -47,6 +48,7 @@ const Link = styled.a`
 const Mode = styled.div`
   color: ${({ theme }) => theme.textColor};
   transition: 250ms color ease;
+  min-width: ${rem(110)};
 
   &:hover {
     color: ${({ theme }) => theme.headerColor};
