@@ -13,6 +13,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  transition: 250ms background-color ease;
   background-color: ${({ theme }) => theme.backgroundColor};
 `;
 

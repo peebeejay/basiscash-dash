@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 
 export const ListItem = styled.div`
+  transition: 250ms color ease;
   color: ${({ theme }) => theme.textColor};
   font-size: ${rem(20)};
   display: flex;

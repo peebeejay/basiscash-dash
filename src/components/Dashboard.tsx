@@ -11,6 +11,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-grow: 2;
+  transition: 250ms background-color ease;
   background-color: ${({ theme }) => theme.backgroundColor};
   flex-direction: column;
   width: 100%;

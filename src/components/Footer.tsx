@@ -14,6 +14,7 @@ const Container = styled.footer`
 `;
 
 const MadeBy = styled.div`
+  transition: 250ms color ease;
   color: ${({ theme }) => theme.textColor};
 `;
 
@@ -54,6 +55,7 @@ const Mode = styled.div`
 `;
 
 const Divider = styled.div`
+  transition: 250ms color ease;
   color: ${({ theme }) => theme.textColor};
   font-size: ${rem(16)};
   margin: 0 ${rem(5)};
