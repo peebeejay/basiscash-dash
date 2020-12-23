@@ -3,6 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import { rem } from 'polished';
 import { ThemeDispatchContext } from './ThemeProvider';
 import { ThemeNames } from '../theme';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Container = styled.footer`
   display: flex;
@@ -63,6 +64,20 @@ const Divider = styled.div`
   margin: 0 ${rem(5)};
 `;
 
+const NameLink = styled.a`
+  color: ${({ theme }) => theme.textColor};
+  transition: 250ms color ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.headerColor};
+  }
+`;
+
+const TipContent = styled.span`
+  font-size: ${rem(12)};
+  font-weight: 600;
+`;
+
 export const Footer = () => {
   const dispatch = useContext(ThemeDispatchContext);
   const theme = useContext(ThemeContext);
@@ -71,7 +86,16 @@ export const Footer = () => {
     <Container>
       <MadeBy>
         {'made by '}
-        <b>{'saitama & junto '}</b>
+        <Tooltip
+          title={<TipContent>{'Contact via Discord or saitama@jay.gg'}</TipContent>}
+        >
+          <b>
+            <NameLink href="https://discordapp.com/users/427289104682713090">
+              {'saitama'}
+            </NameLink>
+          </b>
+        </Tooltip>
+        <b>{' & junto '}</b>
       </MadeBy>
       <Divider>{'|'}</Divider>
       <Links>

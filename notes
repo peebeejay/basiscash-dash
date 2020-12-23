@@ -1,13 +1,9 @@
 next day:
   - add metamask wallet integration
-  - add dark & light theme support
+  - add supply of BAC per day. or details of last expansion?
 
 later:
 - my % of staked bas; my % of liquidity pools?
-- mobile-responsiveness
-- SEO meta tags
--
-- maybe move the infura provider initiation to on mount hook in react provider
 
 reach:
 - look into abi type generation
