@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
-import { DateTime, Interval } from 'luxon';
+import { DateTime, Duration } from 'luxon';
 import { formatNumber } from '../utils';
 import { SmallHeader } from './typography/SmallHeader';
+import { MS_IN_DAY } from '../constants';
+import { SectionContainer } from './typography/Section';
 
 type Props = {
   data: Data;
@@ -74,22 +76,10 @@ export const BACStats = (props: Props) => {
    * and the next seignorage event 00:00 UTC
    */
   useEffect(() => {
-    const utc = DateTime.utc();
-    const nextEpochTime = DateTime.fromObject({
-      year: utc.year,
-      month: utc.month,
-      day: utc.day,
-      hour: 0,
-      zone: 'utc',
-    }).plus({ day: 1 });
-
     const getCountdown = () => {
-      const difference = Interval.fromDateTimes(
-        DateTime.local(),
-        DateTime.fromSeconds(nextEpochTime.toSeconds()),
-      );
-
-      setCountdown(difference.toDuration().toFormat('hh:mm:ss'));
+      const millis: number = MS_IN_DAY - (DateTime.utc().toMillis() % MS_IN_DAY);
+      const difference = Duration.fromMillis(millis);
+      setCountdown(difference.toFormat('hh:mm:ss'));
     };
 
     getCountdown();
