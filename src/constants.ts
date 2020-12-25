@@ -5,6 +5,7 @@ export const SEIGNORAGE_EVENTS_PER_DAY = 1;
 export const DAYS_IN_YEAR = 365;
 export const HOURS_IN_DAY = 24;
 export const SECONDS_IN_HOUR = 3600;
+export const MS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY * 1000;
 
 /* Application Constants */
 export const FETCH_DATA_INTERVAL = 20000; // milliseconds

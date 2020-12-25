@@ -45,6 +45,24 @@ const DataValue = styled.span`
   }
 `;
 
+const RightContainer = styled(SectionContainer)`
+  margin-left: ${rem(30)};
+  flex-direction: row;
+
+  @media (max-width: ${rem(800)}) {
+    margin-left: 0;
+  }
+`;
+
+const LeftContainer = styled(SectionContainer)`
+  margin-right: ${rem(30)};
+  flex-direction: row;
+
+  @media (max-width: ${rem(800)}) {
+    margin-right: 0;
+  }
+`;
+
 export const BACStats = (props: Props) => {
   const {
     data: { prices, tokenSupply },
@@ -84,22 +102,27 @@ export const BACStats = (props: Props) => {
 
   return (
     <Container>
-      <GridItem>
-        <SmallHeader>{'Next Epoch'}</SmallHeader>
-        <DataValue>{countdown}</DataValue>
-      </GridItem>
-      <GridItem>
-        <SmallHeader>{'BAC Spot Price'}</SmallHeader>
-        <DataValue>{`$${formatNumber(prices.bacSpot, 3)} DAI`}</DataValue>
-      </GridItem>
-      <GridItem>
-        <SmallHeader>{'BAC TWAP Price'}</SmallHeader>
-        <DataValue>{`$${formatNumber(prices.bacTwap, 3)} DAI`}</DataValue>
-      </GridItem>
-      <GridItem>
-        <SmallHeader>{'BAC Supply'}</SmallHeader>
-        <DataValue>{`${commify(tokenSupply.bac)}`}</DataValue>
-      </GridItem>
+      <LeftContainer>
+        <GridItem>
+          <SmallHeader>{'Next Epoch'}</SmallHeader>
+          <DataValue>{countdown}</DataValue>
+        </GridItem>
+        <GridItem>
+          <SmallHeader>{'BAC Spot Price'}</SmallHeader>
+          <DataValue>{`$${formatNumber(prices.bacSpot, 3)} DAI`}</DataValue>
+        </GridItem>
+      </LeftContainer>
+
+      <RightContainer>
+        <GridItem>
+          <SmallHeader>{'BAC TWAP Price'}</SmallHeader>
+          <DataValue>{`$${formatNumber(prices.bacTwap, 3)} DAI`}</DataValue>
+        </GridItem>
+        <GridItem>
+          <SmallHeader>{'BAC Supply'}</SmallHeader>
+          <DataValue>{`${commify(tokenSupply.bac)}`}</DataValue>
+        </GridItem>
+      </RightContainer>
     </Container>
   );
 };

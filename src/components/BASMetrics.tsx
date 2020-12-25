@@ -5,6 +5,7 @@ import { commify } from 'ethers/lib/utils';
 import { Data } from './DashboardProvider/state';
 import { LargeHeader } from './typography/LargeHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
+import { RightContainer, LeftContainer } from './typography/Section';
 import { formatNumber } from '../utils';
 
 type Props = {
@@ -29,34 +30,6 @@ const RowContainer = styled.section`
 
   @media (max-width: ${rem(800)}) {
     flex-wrap: wrap;
-  }
-`;
-
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: ${rem(10)};
-  flex: 1;
-
-  @media (max-width: ${rem(800)}) {
-    flex: 100%;
-  }
-`;
-
-const RightContainer = styled(SectionContainer)`
-  margin-right: ${rem(30)};
-
-  @media (max-width: ${rem(800)}) {
-    margin-right: 0;
-  }
-`;
-
-const LeftContainer = styled(SectionContainer)`
-  margin-left: ${rem(30)};
-
-  @media (max-width: ${rem(800)}) {
-    margin-left: 0;
   }
 `;
 
