@@ -9,6 +9,7 @@ export const DarkGray = '#A9A9A9';
 export const Gainsboro = '#DCDCDC';
 export const LightGainsboro = '#E1E1E1';
 export const WhiteSmoke = '#F4F4F4';
+export const FireBrick = '#B22222'; // Dark'ish Red
 
 // Pastel Colors
 export const Thistle = '#E0BBE4';
@@ -53,6 +54,7 @@ export const Noctis = {
   Galliano: '#D5971A', //	Attributes, Constants
   GoldSand: '#E4b781', // Variables & Parameters
   Trinidad: '#E64100', // Light - Function & Variable Declaration, Tags & this
+  Viridian: '#3f8d6c', // Interpolated Strings
 };
 
 export const Azureus = {

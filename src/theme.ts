@@ -1,4 +1,4 @@
-import { Azureus, Noctis, White, Market } from './colors';
+import { Azureus, Noctis, White, Market, FireBrick } from './colors';
 
 export enum ThemeNames {
   light = 'light',
@@ -25,10 +25,10 @@ export const lightTheme: Theme = {
   name: ThemeNames.light,
   backgroundColor: White,
   textColor: Azureus.black1,
-  textColorSad: Market.red,
-  textColorCelebrate: Market.green,
-  textColorSadAsia: Market.green,
-  textColorCelebrateAsia: Market.red,
+  textColorSad: FireBrick,
+  textColorCelebrate: Noctis.Viridian,
+  textColorSadAsia: Noctis.Viridian,
+  textColorCelebrateAsia: FireBrick,
   headerColor: 'purple',
   bannerColor: 'purple',
 };
