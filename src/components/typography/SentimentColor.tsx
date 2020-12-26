@@ -21,7 +21,9 @@ const asianLanguageTags: LanguageTags = {
   'zh-TW': true,
   'zh-HK': true,
   ja: true,
+  'ja-JP': true,
   ko: true,
+  'ko-KR': true,
 };
 
 const Value = styled.div<{
