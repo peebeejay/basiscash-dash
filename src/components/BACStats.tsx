@@ -38,7 +38,8 @@ const GridItem = styled.div`
     flex-direction: row;
     flex: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    margin-bottom: ${rem(5)};
   }
 `;
 
@@ -77,7 +78,7 @@ const SmallHeader = styled(SmallHeaderComponent)`
   @media (max-width: ${rem(800)}) {
     font-size: ${rem(20)};
     margin-top: ${rem(10)};
-    margin-bottom: ${rem(5)};
+    margin-bottom: ${rem(0)};
   }
 `;
 

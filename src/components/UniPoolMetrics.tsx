@@ -13,7 +13,7 @@ import {
   LeftContainer,
   RightContainer,
   RowContainer,
-  Container,
+  Container as ContainerComponent,
 } from './typography/Section';
 
 type Props = {
@@ -27,6 +27,12 @@ const StyledLargeHeader = styled(LargeHeader)`
 const StyledSmallHeader = styled(SmallHeader)`
   margin-top: ${rem(10)};
   margin-bottom: ${rem(0)};
+`;
+
+const Container = styled(ContainerComponent)`
+  @media (max-width: ${rem(800)}) {
+    margin-bottom: ${rem(25)};
+  }
 `;
 
 export const UniPoolMetrics = (props: Props) => {
