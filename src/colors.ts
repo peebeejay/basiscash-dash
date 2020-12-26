@@ -49,9 +49,10 @@ export const Noctis = {
   CornflowerBlue: '#7060eb', // Numbers & Booleans
   PaleVioletRed: '#df769b', // Keywords & Operators
   Cinnabar: '#e66533', // Function & Variable Declaration, Tags & this
-  Japonica: '#d67e5c', // Object properties, ID selectors in CSS & Type annotations
+  Japonica: '#D67E5C', // Object properties, ID selectors in CSS & Type annotations
   Galliano: '#D5971A', //	Attributes, Constants
-  GoldSand: '#e4b781', // Variables & Parameters
+  GoldSand: '#E4b781', // Variables & Parameters
+  Trinidad: '#E64100', // Light - Function & Variable Declaration, Tags & this
 };
 
 export const Azureus = {
@@ -65,4 +66,9 @@ export const Azureus = {
   gray1: '#becfda',
   black1: '#0F1315', // almost black
   white1: '#FFFFFF', // almost white
+};
+
+export const Market = {
+  green: Noctis.MountainMeadow,
+  red: Noctis.Trinidad,
 };
