@@ -9,6 +9,7 @@ import { ListItem, Name, Value } from './typography/ListItem';
 import { formatNumber } from '../utils';
 import { commify } from 'ethers/lib/utils';
 import { HOURS_IN_DAY, SECONDS_IN_HOUR } from '../constants';
+import { LeftContainer, RightContainer } from './typography/Section';
 
 type Props = {
   data: Data;
@@ -32,34 +33,6 @@ const RowContainer = styled.section`
 
   @media (max-width: ${rem(800)}) {
     flex-wrap: wrap;
-  }
-`;
-
-const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: ${rem(5)};
-  flex: 1;
-
-  @media (max-width: ${rem(800)}) {
-    flex: 100%;
-  }
-`;
-
-const RightContainer = styled(SectionContainer)`
-  margin-right: ${rem(30)};
-
-  @media (max-width: ${rem(800)}) {
-    margin-right: 0;
-  }
-`;
-
-const LeftContainer = styled(SectionContainer)`
-  margin-left: ${rem(30)};
-
-  @media (max-width: ${rem(800)}) {
-    margin-left: 0;
   }
 `;
 
@@ -111,7 +84,7 @@ export const UniPoolMetrics = (props: Props) => {
     <Container>
       <StyledLargeHeader>{'Uniswap Pool Metrics'}</StyledLargeHeader>
       <RowContainer>
-        <RightContainer>
+        <LeftContainer>
           <ListItem>
             <StyledSmallHeader>{'DAI/BAS'}</StyledSmallHeader>
           </ListItem>
@@ -134,9 +107,9 @@ export const UniPoolMetrics = (props: Props) => {
             <Name>{'Rewards Remaining:'}</Name>
             <Value>{`${commify(daibasStakingpoolBas)} BAS`}</Value>
           </ListItem>
-        </RightContainer>
+        </LeftContainer>
 
-        <LeftContainer>
+        <RightContainer>
           <ListItem>
             <StyledSmallHeader>{'BAC/DAI'}</StyledSmallHeader>
           </ListItem>
@@ -159,7 +132,7 @@ export const UniPoolMetrics = (props: Props) => {
             <Name>{'Rewards Remaining:'}</Name>
             <Value>{`${commify(daibacStakingpoolBas)} BAS`}</Value>
           </ListItem>
-        </LeftContainer>
+        </RightContainer>
       </RowContainer>
     </Container>
   );

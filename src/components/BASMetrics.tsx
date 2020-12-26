@@ -50,7 +50,7 @@ export const BASMetrics = (props: Props) => {
     <Container>
       <LargeHeader>{'BAS Metrics'}</LargeHeader>
       <RowContainer>
-        <RightContainer>
+        <LeftContainer>
           <ListItem>
             <Name>{'BAS in Boardroom:'}</Name>
             <Value>{`${formatNumber(basInBoardroomPercent, 2)}%`}</Value>
@@ -59,8 +59,8 @@ export const BASMetrics = (props: Props) => {
             <Name>{'Unstaked BAS:'}</Name>
             <Value>{`${formatNumber(unstakedBasPercent, 2)}%`}</Value>
           </ListItem>
-        </RightContainer>
-        <LeftContainer>
+        </LeftContainer>
+        <RightContainer>
           <ListItem>
             <Name>{'BAS in DAI/BAS Pool'}</Name>
             <Value>{`${formatNumber(basInDaiBasUniPoolPercent, 2)}%`}</Value>
@@ -69,7 +69,7 @@ export const BASMetrics = (props: Props) => {
             <Name>{'Total BAS Supply'}</Name>
             <Value>{`${commify(basTotalSupply)}`}</Value>
           </ListItem>
-        </LeftContainer>
+        </RightContainer>
       </RowContainer>
     </Container>
   );

@@ -13,7 +13,7 @@ export const SectionContainer = styled.section`
   }
 `;
 
-export const RightContainer = styled(SectionContainer)`
+export const LeftContainer = styled(SectionContainer)`
   margin-right: ${rem(30)};
 
   @media (max-width: ${rem(800)}) {
@@ -21,7 +21,7 @@ export const RightContainer = styled(SectionContainer)`
   }
 `;
 
-export const LeftContainer = styled(SectionContainer)`
+export const RightContainer = styled(SectionContainer)`
   margin-left: ${rem(30)};
 
   @media (max-width: ${rem(800)}) {
