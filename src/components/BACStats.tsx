@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { Data } from './DashboardProvider/state';
 import { commify } from 'ethers/lib/utils';
-import { DateTime, Duration } from 'luxon';
 import { formatNumber } from '../utils';
 import { SmallHeader as SmallHeaderComponent } from './typography/SmallHeader';
-import { MS_IN_DAY } from '../constants';
 import { SectionContainer } from './typography/Section';
+import { SentimentColor } from './typography/SentimentColor';
 import { Countdown } from './Countdown';
 
 type Props = {
@@ -99,14 +98,24 @@ export const BACStats = (props: Props) => {
         </GridItem>
         <GridItem>
           <SmallHeader>{'BAC Spot Price'}</SmallHeader>
-          <DataValue>{`$${formatNumber(prices.bacSpot, 3)} DAI`}</DataValue>
+          <DataValue>
+            <SentimentColor value={prices.bacSpot}>{`$${formatNumber(
+              prices.bacSpot,
+              3,
+            )} DAI`}</SentimentColor>
+          </DataValue>
         </GridItem>
       </LeftContainer>
 
       <RightContainer>
         <GridItem>
           <SmallHeader>{'BAC TWAP Price'}</SmallHeader>
-          <DataValue>{`$${formatNumber(prices.bacTwap, 3)} DAI`}</DataValue>
+          <DataValue>
+            <SentimentColor value={prices.bacTwap}>{`$${formatNumber(
+              prices.bacTwap,
+              3,
+            )} DAI`}</SentimentColor>
+          </DataValue>
         </GridItem>
         <GridItem>
           <SmallHeader>{'BAC Supply'}</SmallHeader>

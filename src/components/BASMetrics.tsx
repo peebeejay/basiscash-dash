@@ -10,6 +10,7 @@ import {
   Container,
 } from './typography/Section';
 import { formatNumber } from '../utils';
+import { SentimentColor } from './typography/SentimentColor';
 
 type Props = {
   data: Data;
@@ -35,17 +36,32 @@ export const BASMetrics = (props: Props) => {
         <LeftContainer>
           <ListItem>
             <Name>{'BAS in Boardroom:'}</Name>
-            <Value>{`${formatNumber(basInBoardroomPercent, 2)}%`}</Value>
+            <Value>
+              <SentimentColor value={basInBoardroomPercent}>{`${formatNumber(
+                basInBoardroomPercent,
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Unstaked BAS:'}</Name>
-            <Value>{`${formatNumber(unstakedBasPercent, 2)}%`}</Value>
+            <Value>
+              <SentimentColor value={unstakedBasPercent}>{`${formatNumber(
+                unstakedBasPercent,
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
         </LeftContainer>
         <RightContainer>
           <ListItem>
             <Name>{'BAS in DAI/BAS Pool:'}</Name>
-            <Value>{`${formatNumber(basInDaiBasUniPoolPercent, 2)}%`}</Value>
+            <Value>
+              <SentimentColor value={basInDaiBasUniPoolPercent}>{`${formatNumber(
+                basInDaiBasUniPoolPercent,
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Total BAS Supply:'}</Name>

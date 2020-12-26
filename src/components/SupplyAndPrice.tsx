@@ -7,6 +7,7 @@ import { formatNumber } from '../utils';
 import { LargeHeader } from './typography/LargeHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
 import { RightContainer, LeftContainer, RowContainer } from './typography/Section';
+import { SentimentColor } from './typography/SentimentColor';
 
 type Props = {
   data: Data;
@@ -47,11 +48,16 @@ export const PriceAndSupply = (props: Props) => {
         <LargeHeader>{'Price'}</LargeHeader>
         <ListItem>
           <Name>{'BAS Price:'}</Name>
-          <Value>{`$${formatNumber(prices.basSpot)} DAI`}</Value>
+          <SentimentColor value={prices.basSpot}>{`$${formatNumber(
+            prices.basSpot,
+          )} DAI`}</SentimentColor>
         </ListItem>
         <ListItem>
           <Name>{'BAB Price:'}</Name>
-          <Value>{`$${formatNumber(prices.babSpot, 3)} DAI`}</Value>
+          <SentimentColor value={prices.babSpot}>{`$${formatNumber(
+            prices.babSpot,
+            3,
+          )} DAI`}</SentimentColor>
         </ListItem>
       </PriceContainer>
     </RowContainer>

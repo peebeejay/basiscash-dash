@@ -15,6 +15,7 @@ import {
   RowContainer,
   Container as ContainerComponent,
 } from './typography/Section';
+import { SentimentColor } from './typography/SentimentColor';
 
 type Props = {
   data: Data;
@@ -80,18 +81,32 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(basDaiTvl, 0)} DAI`}</Value>
+            <Value>
+              <SentimentColor value={basDaiTvl}>{`$${formatNumber(
+                basDaiTvl,
+                0,
+              )} DAI`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
-            <Value>{`${formatNumber(basDaiDailyReturn.toNumber(), 2)}%`}</Value>
+            <Value>
+              <SentimentColor value={basDaiDailyReturn.toNumber()}>{`${formatNumber(
+                basDaiDailyReturn.toNumber(),
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Yearly):'}</Name>
-            <Value>{`${formatNumber(
-              basDaiDailyReturn.multipliedBy(365).toNumber(),
-              2,
-            )}%`}</Value>
+            <Value>
+              <SentimentColor
+                value={basDaiDailyReturn.multipliedBy(365).toNumber()}
+              >{`${formatNumber(
+                basDaiDailyReturn.multipliedBy(365).toNumber(),
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>
@@ -105,18 +120,32 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(bacDaiTvl, 0)} DAI`}</Value>
+            <Value>
+              <SentimentColor value={bacDaiTvl}>{`$${formatNumber(
+                bacDaiTvl,
+                0,
+              )} DAI`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
-            <Value>{`${formatNumber(bacDaiDailyReturn.toNumber(), 2)}%`}</Value>
+            <Value>
+              <SentimentColor value={bacDaiDailyReturn.toNumber()}>{`${formatNumber(
+                bacDaiDailyReturn.toNumber(),
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Yearly):'}</Name>
-            <Value>{`${formatNumber(
-              bacDaiDailyReturn.multipliedBy(365).toNumber(),
-              2,
-            )}%`}</Value>
+            <Value>
+              <SentimentColor
+                value={bacDaiDailyReturn.multipliedBy(365).toNumber()}
+              >{`${formatNumber(
+                bacDaiDailyReturn.multipliedBy(365).toNumber(),
+                2,
+              )}%`}</SentimentColor>
+            </Value>
           </ListItem>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>
