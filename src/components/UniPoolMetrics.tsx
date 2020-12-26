@@ -74,7 +74,7 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(basDaiTvl, 2)} DAI`}</Value>
+            <Value>{`$${formatNumber(basDaiTvl, 0)} DAI`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
@@ -99,7 +99,7 @@ export const UniPoolMetrics = (props: Props) => {
           </ListItem>
           <ListItem>
             <Name>{'TVL:'}</Name>
-            <Value>{`$${formatNumber(bacDaiTvl, 2)} DAI`}</Value>
+            <Value>{`$${formatNumber(bacDaiTvl, 0)} DAI`}</Value>
           </ListItem>
           <ListItem>
             <Name>{'Returns (Daily):'}</Name>
