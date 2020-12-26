@@ -1,9 +1,6 @@
 next day:
-  - add metamask wallet integration
-  - add supply of BAC per day. or details of last expansion?
+  - look into connecting metamask wallet (https://github.com/aragon/use-wallet)
+  - add confetti
 
 later:
 - my % of staked bas; my % of liquidity pools?
-
-reach:
-- look into abi type generation
