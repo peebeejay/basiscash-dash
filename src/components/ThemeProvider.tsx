@@ -34,7 +34,7 @@ export const ThemeDispatchContext = createContext<ACTIONS>({} as ACTIONS);
 export const ThemeProvider = ({ children }: Props) => {
   const [themePreference, setThemePreference] = useLocalStorage<ThemeNames>(
     'theme-preference',
-    ThemeNames.light,
+    ThemeNames.dark,
   );
 
   const reducer = (theme: Theme, action: Actions): Theme => {
@@ -49,7 +49,7 @@ export const ThemeProvider = ({ children }: Props) => {
 
         return newTheme;
       case ThemeActionsNames.SET:
-        return action.payload ?? themes[ThemeNames.light];
+        return action.payload ?? themes[ThemeNames.dark];
       default:
         return theme;
     }
