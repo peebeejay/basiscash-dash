@@ -9,32 +9,16 @@ import { ListItem, Name, Value } from './typography/ListItem';
 import { formatNumber } from '../utils';
 import { commify } from 'ethers/lib/utils';
 import { HOURS_IN_DAY, SECONDS_IN_HOUR } from '../constants';
-import { LeftContainer, RightContainer } from './typography/Section';
+import {
+  LeftContainer,
+  RightContainer,
+  RowContainer,
+  Container,
+} from './typography/Section';
 
 type Props = {
   data: Data;
 };
-
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  @media (max-width: ${rem(800)}) {
-    margin-right: ${rem(20)};
-    margin-left: ${rem(20)};
-  }
-`;
-
-const RowContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media (max-width: ${rem(800)}) {
-    flex-wrap: wrap;
-  }
-`;
 
 const StyledLargeHeader = styled(LargeHeader)`
   margin-bottom: ${rem(5)};

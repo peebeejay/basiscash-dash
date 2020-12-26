@@ -6,21 +6,11 @@ import { commify } from 'ethers/lib/utils';
 import { formatNumber } from '../utils';
 import { LargeHeader } from './typography/LargeHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
-import { RightContainer, LeftContainer } from './typography/Section';
+import { RightContainer, LeftContainer, RowContainer } from './typography/Section';
 
 type Props = {
   data: Data;
 };
-
-const RowContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media (max-width: ${rem(800)}) {
-    flex-wrap: wrap;
-  }
-`;
 
 const SupplyContainer = styled(LeftContainer)`
   @media (max-width: ${rem(800)}) {

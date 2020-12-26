@@ -1,37 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
-import { rem } from 'polished';
 import { commify } from 'ethers/lib/utils';
 import { Data } from './DashboardProvider/state';
 import { LargeHeader } from './typography/LargeHeader';
 import { ListItem, Name, Value } from './typography/ListItem';
-import { RightContainer, LeftContainer } from './typography/Section';
+import {
+  RightContainer,
+  LeftContainer,
+  RowContainer,
+  Container,
+} from './typography/Section';
 import { formatNumber } from '../utils';
 
 type Props = {
   data: Data;
 };
-
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  @media (max-width: ${rem(800)}) {
-    margin-right: ${rem(20)};
-    margin-left: ${rem(20)};
-  }
-`;
-
-const RowContainer = styled.section`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  @media (max-width: ${rem(800)}) {
-    flex-wrap: wrap;
-  }
-`;
 
 export const BASMetrics = (props: Props) => {
   const {
