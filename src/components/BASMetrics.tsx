@@ -44,11 +44,11 @@ export const BASMetrics = (props: Props) => {
         </LeftContainer>
         <RightContainer>
           <ListItem>
-            <Name>{'BAS in DAI/BAS Pool'}</Name>
+            <Name>{'BAS in DAI/BAS Pool:'}</Name>
             <Value>{`${formatNumber(basInDaiBasUniPoolPercent, 2)}%`}</Value>
           </ListItem>
           <ListItem>
-            <Name>{'Total BAS Supply'}</Name>
+            <Name>{'Total BAS Supply:'}</Name>
             <Value>{`${commify(basTotalSupply)}`}</Value>
           </ListItem>
         </RightContainer>
