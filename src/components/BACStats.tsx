@@ -75,6 +75,8 @@ const RightContainer = styled(SectionContainer)`
 `;
 
 const SmallHeader = styled(SmallHeaderComponent)`
+  font-size: ${rem(20)};
+
   @media (max-width: ${rem(800)}) {
     font-size: ${rem(20)};
     margin-top: ${rem(10)};
