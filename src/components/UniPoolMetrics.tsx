@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { BigNumber } from 'bignumber.js';
+import Tooltip from '@material-ui/core/Tooltip';
 import { Data } from './DashboardProvider/state';
 import { LargeHeader } from './typography/LargeHeader';
 import { SmallHeader } from './typography/SmallHeader';
@@ -34,6 +35,11 @@ const Container = styled(ContainerComponent)`
   @media (max-width: ${rem(800)}) {
     margin-bottom: ${rem(25)};
   }
+`;
+
+const TipContent = styled.span`
+  font-size: ${rem(12)};
+  font-weight: 600;
 `;
 
 export const UniPoolMetrics = (props: Props) => {
@@ -88,26 +94,24 @@ export const UniPoolMetrics = (props: Props) => {
               )} DAI`}</SentimentColor>
             </Value>
           </ListItem>
-          <ListItem>
-            <Name>{'Returns (Daily):'}</Name>
-            <Value>
-              <SentimentColor value={basDaiDailyReturn.toNumber()}>{`${formatNumber(
-                basDaiDailyReturn.toNumber(),
-                2,
-              )}%`}</SentimentColor>
-            </Value>
-          </ListItem>
-          <ListItem>
-            <Name>{'Returns (Yearly):'}</Name>
-            <Value>
-              <SentimentColor
-                value={basDaiDailyReturn.multipliedBy(365).toNumber()}
-              >{`${formatNumber(
-                basDaiDailyReturn.multipliedBy(365).toNumber(),
-                2,
-              )}%`}</SentimentColor>
-            </Value>
-          </ListItem>
+          <Tooltip
+            placement="top-start"
+            arrow
+            title={<TipContent>{'Daily and Annual Yields'}</TipContent>}
+          >
+            <ListItem>
+              <Name>{'Yield (D/Y)*:'}</Name>
+              <Value>
+                <SentimentColor value={basDaiDailyReturn.toNumber()}>{`${formatNumber(
+                  basDaiDailyReturn.toNumber(),
+                  2,
+                )}% / ${formatNumber(
+                  basDaiDailyReturn.multipliedBy(365).toNumber(),
+                  2,
+                )}%`}</SentimentColor>
+              </Value>
+            </ListItem>
+          </Tooltip>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>
             <Value>{`${commify(daibasStakingpoolBas)} BAS`}</Value>
@@ -127,26 +131,24 @@ export const UniPoolMetrics = (props: Props) => {
               )} DAI`}</SentimentColor>
             </Value>
           </ListItem>
-          <ListItem>
-            <Name>{'Returns (Daily):'}</Name>
-            <Value>
-              <SentimentColor value={bacDaiDailyReturn.toNumber()}>{`${formatNumber(
-                bacDaiDailyReturn.toNumber(),
-                2,
-              )}%`}</SentimentColor>
-            </Value>
-          </ListItem>
-          <ListItem>
-            <Name>{'Returns (Yearly):'}</Name>
-            <Value>
-              <SentimentColor
-                value={bacDaiDailyReturn.multipliedBy(365).toNumber()}
-              >{`${formatNumber(
-                bacDaiDailyReturn.multipliedBy(365).toNumber(),
-                2,
-              )}%`}</SentimentColor>
-            </Value>
-          </ListItem>
+          <Tooltip
+            placement="top-start"
+            arrow
+            title={<TipContent>{'Daily and Annual Yields'}</TipContent>}
+          >
+            <ListItem>
+              <Name>{'Yield (D/Y)*:'}</Name>
+              <Value>
+                <SentimentColor value={bacDaiDailyReturn.toNumber()}>{`${formatNumber(
+                  bacDaiDailyReturn.toNumber(),
+                  2,
+                )}% / ${formatNumber(
+                  bacDaiDailyReturn.multipliedBy(365).toNumber(),
+                  2,
+                )}%`}</SentimentColor>
+              </Value>
+            </ListItem>
+          </Tooltip>
           <ListItem>
             <Name>{'Rewards Remaining:'}</Name>
             <Value>{`${commify(daibacStakingpoolBas)} BAS`}</Value>
