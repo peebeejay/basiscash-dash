@@ -9,11 +9,7 @@ import {
   formatNumber,
 } from '../utils';
 import { Data } from './DashboardProvider/state';
-import {
-  DAYS_IN_YEAR,
-  DEFLATION_THRESHOLD_PRICE,
-  INFLATION_THRESHOLD_PRICE,
-} from '../constants';
+import { DAYS_IN_YEAR, INFLATION_THRESHOLD_PRICE } from '../constants';
 
 type Props = {
   data: Data;

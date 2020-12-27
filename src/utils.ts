@@ -1,5 +1,7 @@
 import { commify } from 'ethers/lib/utils';
 import { SEIGNORAGE_EVENTS_PER_DAY } from './constants';
+import BigNumber from 'bignumber.js';
+import { BigNumber as BNEthers } from 'ethers';
 
 /* Only use if decimals don't matter */
 export const formatValue = (value: number) => commify(value.toFixed(2));
@@ -41,3 +43,10 @@ export const getCirculatingBasSupply = (
   basDaiTreasuryRewards: number,
   bacDaiTreasuryRewards: number,
 ) => basTotalSupply - basDaiTreasuryRewards - bacDaiTreasuryRewards;
+
+export const getNumFromBNEthers = (bigNumEthers: BNEthers): number => {
+  const divisor1e18 = new BigNumber('1e18');
+  const bigNum = new BigNumber(bigNumEthers.toString());
+
+  return bigNum.dividedBy(divisor1e18).toNumber();
+};
