@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Banner } from './Banner';
+import { Helmet } from './Helmet';
 import { DashboardState } from './DashboardProvider';
 import { BACStats } from './BACStats';
 import { PriceAndSupply } from './SupplyAndPrice';
@@ -31,6 +32,7 @@ export const Dashboard = () => {
       <PriceAndSupply data={data} />
       <BASMetrics data={data} />
       <UniPoolMetrics data={data} />
+      <Helmet data={data} />
     </Container>
   );
 };
