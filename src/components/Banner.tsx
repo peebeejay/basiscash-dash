@@ -50,6 +50,7 @@ const Supply = styled.div`
   font-size: ${rem(22)};
   font-weight: 600;
   line-height: ${rem(30)};
+  margin-bottom: ${rem(5)};
 
   @media (max-width: ${rem(800)}) {
     font-size: ${rem(18)};
@@ -96,10 +97,11 @@ export const Banner = (props: Props) => {
             )} BAC.`}</Supply>
 
             <Return>
-              {`Returning ${formatValue(returnPerBas)} BAC (${formatValue(
+              {`Returning ${formatNumber(returnPerBas)} BAC (${formatNumber(
                 basReturnDaily * 100,
-              )}% Daily & ${formatValue(
+              )}% Daily & ${formatNumber(
                 basReturnDaily * DAYS_IN_YEAR * 100,
+                0,
               )}% APY) per BAS`}
             </Return>
           </>
