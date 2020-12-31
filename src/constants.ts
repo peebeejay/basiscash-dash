@@ -11,6 +11,7 @@ export const MS_IN_DAY = SECONDS_IN_HOUR * HOURS_IN_DAY * 1000;
 export const FETCH_DATA_INTERVAL = 20000; // milliseconds
 export const INFLATION_THRESHOLD_PRICE = 1.05;
 export const DEFLATION_THRESHOLD_PRICE = 0.95;
+export const CONFETTI_DISPLAY_TIME = 8000;
 
 export const tokens: Tokens = {
   dai: {

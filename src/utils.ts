@@ -1,7 +1,8 @@
 import { commify } from 'ethers/lib/utils';
-import { SEIGNORAGE_EVENTS_PER_DAY } from './constants';
+import { MS_IN_DAY, SEIGNORAGE_EVENTS_PER_DAY } from './constants';
 import BigNumber from 'bignumber.js';
 import { BigNumber as BNEthers } from 'ethers';
+import { DateTime } from 'luxon';
 
 /* Only use if decimals don't matter */
 export const formatValue = (value: number) => commify(value.toFixed(2));
@@ -50,3 +51,6 @@ export const getNumFromBNEthers = (bigNumEthers: BNEthers): number => {
 
   return bigNum.dividedBy(divisor1e18).toNumber();
 };
+
+export const getMsToSeignorage = (): number =>
+  MS_IN_DAY - (DateTime.utc().toMillis() % MS_IN_DAY);

@@ -95,7 +95,7 @@ export const BACStats = (props: Props) => {
         <GridItem>
           <SmallHeader>{'Next Epoch'}</SmallHeader>
           <DataValue>
-            <Countdown />
+            <Countdown data={props.data} />
           </DataValue>
         </GridItem>
         <GridItem>
