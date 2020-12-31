@@ -90,6 +90,14 @@ export const Navbar = () => {
           <Link target={'_blank'} href="https://docs.basis.cash/">
             docs
           </Link>
+          <Link
+            target={'_blank'}
+            href={
+              'https://dex.vision/?ticker=UniswapV2:BASDAI-0x0379dA7a5895D13037B6937b109fA8607a659ADF&interval=1/'
+            }
+          >
+            charts
+          </Link>
           <Link target={'_blank'} href="https://duneanalytics.com/donkhalil/basis-cash_1">
             analytics
           </Link>
@@ -101,7 +109,7 @@ export const Navbar = () => {
           >
             trade
           </Link>
-          <Link>wallet (soon)</Link>
+          <Link>wallet</Link>
         </Links>
       </ContentRight>
     </Container>
