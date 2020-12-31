@@ -107,7 +107,7 @@ export const UniPoolMetrics = (props: Props) => {
                   2,
                 )}% / ${formatNumber(
                   basDaiDailyReturn.multipliedBy(365).toNumber(),
-                  2,
+                  0,
                 )}%`}</SentimentColor>
               </Value>
             </ListItem>
@@ -144,7 +144,7 @@ export const UniPoolMetrics = (props: Props) => {
                   2,
                 )}% / ${formatNumber(
                   bacDaiDailyReturn.multipliedBy(365).toNumber(),
-                  2,
+                  0,
                 )}%`}</SentimentColor>
               </Value>
             </ListItem>
