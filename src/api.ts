@@ -1,7 +1,7 @@
 import { ApiData } from './types';
 
 export const apiGetData = async (): Promise<ApiData | undefined> => {
-  const uri = 'https://basiscash-server-nextjs-nine.vercel.app/api/data';
+  const uri = 'https://basiscash-server.junto2015.vercel.app/api/data';
 
   try {
     const response = await fetch(uri, { method: 'GET' });
