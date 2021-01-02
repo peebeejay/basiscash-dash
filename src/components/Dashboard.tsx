@@ -7,6 +7,7 @@ import { BACStats } from './BACStats';
 import { PriceAndSupply } from './SupplyAndPrice';
 import { BASMetrics } from './BASMetrics';
 import { UniPoolMetrics } from './UniPoolMetrics';
+import { WalletBalance } from './WalletBalance';
 
 export const Container = styled.section`
   display: flex;
@@ -19,7 +20,7 @@ export const Container = styled.section`
 `;
 
 export const Dashboard = () => {
-  const { data } = useContext(DashboardState);
+  const { data, balances } = useContext(DashboardState);
 
   if (data === null) {
     return null;
@@ -32,6 +33,7 @@ export const Dashboard = () => {
       <PriceAndSupply data={data} />
       <BASMetrics data={data} />
       <UniPoolMetrics data={data} />
+      {balances && <WalletBalance data={data} balances={balances} />}
       <Helmet data={data} />
     </Container>
   );

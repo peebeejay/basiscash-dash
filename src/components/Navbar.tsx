@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { BasisCashLogo as BasisCashLogoComponent } from './Logo';
+import { DashboardDispatch } from './DashboardProvider';
 
 const Container = styled.header`
   display: flex;
@@ -74,6 +75,8 @@ const Name = styled.div`
 `;
 
 export const Navbar = () => {
+  const { connectToWallet } = useContext(DashboardDispatch);
+
   return (
     <Container>
       <ContentLeft target={'_blank'} href="https://basis.cash">
@@ -109,7 +112,7 @@ export const Navbar = () => {
           >
             trade
           </Link>
-          <Link>wallet</Link>
+          <Link onClick={() => connectToWallet()}>wallet</Link>
         </Links>
       </ContentRight>
     </Container>

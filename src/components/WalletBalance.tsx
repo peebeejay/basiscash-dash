@@ -2,12 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { LargeHeader } from './typography/LargeHeader';
+import { Data, Balances } from './DashboardProvider/state';
+
+type Props = {
+  data: Data;
+  balances: Balances;
+};
 
 const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: ${rem(15)}; // temp
 `;
 
 const StyledLargeHeader = styled(LargeHeader)`
@@ -15,10 +20,12 @@ const StyledLargeHeader = styled(LargeHeader)`
   margin-top: ${rem(10)};
 `;
 
-export const WalletBalance = () => {
+export const WalletBalance = (props: Props) => {
+  console.log(props);
+
   return (
     <Container>
-      <StyledLargeHeader>{'Token Balances (soon)'}</StyledLargeHeader>
+      <StyledLargeHeader>{'Token Balances'}</StyledLargeHeader>
     </Container>
   );
 };

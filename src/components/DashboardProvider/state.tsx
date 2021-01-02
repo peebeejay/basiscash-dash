@@ -3,6 +3,7 @@ import BigNumber from 'bignumber.js';
 
 export type State = {
   data: Data | null;
+  balances: Balances | null;
 };
 
 export type Data = {
@@ -47,10 +48,19 @@ export type Data = {
   };
 };
 
+export type Balances = {
+  bac: number;
+  bas: number;
+  bab: number;
+  dai: number;
+};
+
 export interface Dispatcher {
   updateState: Dispatch<SetStateAction<State>>;
+  connectToWallet: () => void;
 }
 
 export const createInitialState = (): State => ({
   data: null,
+  balances: null,
 });
