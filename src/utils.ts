@@ -26,10 +26,9 @@ export const getSupplyIncrease = (bacSupply: number, bacTwap: number) =>
 
 /* Gets the amount of BAC returned per issued BAS share staked in the boardroom */
 export const getReturnPerBas = (
-  bacSupply: number,
-  bacTwap: number,
+  bacSupplyIncrease: number,
   stakedBasInBoardroom: number,
-) => getSupplyIncreaseRaw(bacSupply, bacTwap) / stakedBasInBoardroom;
+) => bacSupplyIncrease / stakedBasInBoardroom;
 
 /* Gets the return in USD (DAI) terms per BAS based on the next expansion */
 export const getBasReturnDaily = (
