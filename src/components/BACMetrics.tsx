@@ -38,7 +38,7 @@ export const BACMetrics = (props: Props) => {
               <SentimentColor value={bacTreasury}>{`${formatNumber(
                 bacTreasury,
                 0,
-              )} / ${formatNumber(bacTreasuryPercent, 2)}%`}</SentimentColor>
+              )}`}</SentimentColor>
             </Value>
           </ListItem>
           <ListItem>

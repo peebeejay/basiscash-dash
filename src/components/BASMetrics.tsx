@@ -38,9 +38,9 @@ export const BASMetrics = (props: Props) => {
             <Name>{'Boardroom BAS:'}</Name>
             <Value>
               <SentimentColor value={basInBoardroomPercent}>{`${formatNumber(
-                basBoardroom,
-                0,
-              )} / ${formatNumber(basInBoardroomPercent, 2)}%`}</SentimentColor>
+                basInBoardroomPercent,
+                2,
+              )}%`}</SentimentColor>
             </Value>
           </ListItem>
           <ListItem>
