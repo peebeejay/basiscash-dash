@@ -4,6 +4,7 @@ import { Banner } from './Banner';
 import { Helmet } from './Helmet';
 import { DashboardState } from './DashboardProvider';
 import { BACStats } from './BACStats';
+import { BACMetrics } from './BACMetrics';
 import { PriceAndSupply } from './SupplyAndPrice';
 import { BASMetrics } from './BASMetrics';
 import { UniPoolMetrics } from './UniPoolMetrics';
@@ -30,6 +31,7 @@ export const Dashboard = () => {
       <Banner data={data} />
       <BACStats data={data} />
       <PriceAndSupply data={data} />
+      <BACMetrics data={data} />
       <BASMetrics data={data} />
       <UniPoolMetrics data={data} />
       <Helmet data={data} />

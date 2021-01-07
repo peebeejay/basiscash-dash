@@ -22,6 +22,7 @@ export type ApiData = {
   bac_twap: number;
   bas_spot: number;
   bas_total_supply: number;
+  treasury_bac: number;
   boardroom_bas: number;
   /* BAS rewards */
   daibac_stakingpool_bas: number;

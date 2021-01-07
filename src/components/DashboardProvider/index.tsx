@@ -43,6 +43,7 @@ const DashboardProvider: FC<Props> = (props) => {
             ),
             basTotalSupply: data.bas_total_supply,
             bab: data.bab_supply,
+            bacTreasury: data.treasury_bac,
           },
           staking: {
             basBoardroom: data.boardroom_bas,

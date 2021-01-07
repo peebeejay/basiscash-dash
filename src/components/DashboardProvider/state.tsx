@@ -21,6 +21,7 @@ export type Data = {
     basCirculating: number;
     basTotalSupply: number;
     bab: number;
+    bacTreasury: number;
   };
   staking: {
     /* Amount of total BAS staked in the boardroom contract */

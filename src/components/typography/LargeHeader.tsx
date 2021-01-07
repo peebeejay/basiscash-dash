@@ -6,6 +6,7 @@ export const LargeHeader = styled.h2`
   color: ${({ theme }) => theme.headerColor};
   text-align: left;
   margin-bottom: ${rem(10)};
+  margin-top: ${rem(10)};
   font-size: ${rem(24)};
   font-weight: 700;
 
