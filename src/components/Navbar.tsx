@@ -103,11 +103,12 @@ export const Navbar = () => {
           </Link>
           <Link
             target={'_blank'}
-            href={'https://1inch.exchange/#/r/0x1d82C486CC5f243F379F52B5eA7A205D091dc7C5'}
+            href={
+              'https://app.uniswap.org/#/swap?inputCurrency=0x3449fc1cd036255ba1eb19d65ff4ba2b8903a69a&outputCurrency=0x6b175474e89094c44da98b954eedeac495271d0f'
+            }
           >
             trade
           </Link>
-          <Link>wallet</Link>
         </Links>
       </ContentRight>
     </Container>
